@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		483CC17C252EA17F001F24E0 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483CC17B252EA17F001F24E0 /* RegistroViewController.swift */; };
 		4853410D2522212A00E47927 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4853410C2522212A00E47927 /* AppDelegate.swift */; };
 		4853410F2522212A00E47927 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4853410E2522212A00E47927 /* SceneDelegate.swift */; };
 		485341112522212A00E47927 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485341102522212A00E47927 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		483CC17B252EA17F001F24E0 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		485341092522212A00E47927 /* InstaISIL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaISIL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4853410C2522212A00E47927 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4853410E2522212A00E47927 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				485341152522212C00E47927 /* Assets.xcassets */,
 				485341172522212C00E47927 /* LaunchScreen.storyboard */,
 				4853411A2522212C00E47927 /* Info.plist */,
+				483CC17B252EA17F001F24E0 /* RegistroViewController.swift */,
 			);
 			path = InstaISIL;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				485341112522212A00E47927 /* ViewController.swift in Sources */,
+				483CC17C252EA17F001F24E0 /* RegistroViewController.swift in Sources */,
 				4853410D2522212A00E47927 /* AppDelegate.swift in Sources */,
 				4853410F2522212A00E47927 /* SceneDelegate.swift in Sources */,
 			);
