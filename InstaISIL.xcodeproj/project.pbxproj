@@ -14,6 +14,8 @@
 		485341142522212A00E47927 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 485341122522212A00E47927 /* Main.storyboard */; };
 		485341162522212C00E47927 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 485341152522212C00E47927 /* Assets.xcassets */; };
 		485341192522212C00E47927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 485341172522212C00E47927 /* LaunchScreen.storyboard */; };
+		487E527D2530DDE000AF33AC /* InicioSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E527C2530DDE000AF33AC /* InicioSesionViewController.swift */; };
+		487E52812530DE4D00AF33AC /* RecuperarPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E52802530DE4D00AF33AC /* RecuperarPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		485341152522212C00E47927 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		485341182522212C00E47927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4853411A2522212C00E47927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487E527C2530DDE000AF33AC /* InicioSesionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioSesionViewController.swift; sourceTree = "<group>"; };
+		487E52802530DE4D00AF33AC /* RecuperarPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecuperarPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				485341172522212C00E47927 /* LaunchScreen.storyboard */,
 				4853411A2522212C00E47927 /* Info.plist */,
 				483CC17B252EA17F001F24E0 /* RegistroViewController.swift */,
+				487E527C2530DDE000AF33AC /* InicioSesionViewController.swift */,
+				487E52802530DE4D00AF33AC /* RecuperarPasswordViewController.swift */,
 			);
 			path = InstaISIL;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487E527D2530DDE000AF33AC /* InicioSesionViewController.swift in Sources */,
+				487E52812530DE4D00AF33AC /* RecuperarPasswordViewController.swift in Sources */,
 				485341112522212A00E47927 /* ViewController.swift in Sources */,
 				483CC17C252EA17F001F24E0 /* RegistroViewController.swift in Sources */,
 				4853410D2522212A00E47927 /* AppDelegate.swift in Sources */,
