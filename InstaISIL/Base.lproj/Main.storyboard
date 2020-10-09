@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x1E-UM-q3p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pvy-eg-XRd">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jph-RF-eiz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEr-oz-8Cf">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
@@ -59,7 +59,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zx5-Hl-7ce">
-                                        <rect key="frame" x="20" y="446.66666666666669" width="374" height="30"/>
+                                        <rect key="frame" x="20" y="446.66666666666663" width="374" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="t1V-Uj-jaC"/>
                                         </constraints>
@@ -67,6 +67,9 @@
                                         <state key="normal" title="Recuperar password">
                                             <color key="titleColor" red="0.87091089839005609" green="0.97566684962765993" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="dav-5E-35P" kind="show" id="Mg6-if-2YW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gw3-Sl-8BI">
                                         <rect key="frame" x="20" y="501.66666666666663" width="374" height="30"/>
@@ -77,9 +80,13 @@
                                         <state key="normal" title="¿Eres nuevo? Registrate">
                                             <color key="titleColor" red="0.87091089839005609" green="0.97566684962765993" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="eKO-S1-dnP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.074503727908537015" green="0.087848300764406473" blue="0.30829015544041449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="zx5-Hl-7ce" firstAttribute="trailing" secondItem="0kj-Ct-Hhw" secondAttribute="trailing" id="2ON-eR-p1r"/>
                                     <constraint firstItem="M0i-Sj-0hc" firstAttribute="top" secondItem="xqg-s6-V6o" secondAttribute="bottom" constant="40" id="A3j-Ph-wSm"/>
@@ -105,6 +112,9 @@
                                     <constraint firstItem="GEr-oz-8Cf" firstAttribute="top" secondItem="Jph-RF-eiz" secondAttribute="top" id="wRr-nJ-6rP"/>
                                     <constraint firstItem="zx5-Hl-7ce" firstAttribute="leading" secondItem="0kj-Ct-Hhw" secondAttribute="leading" id="zk5-7H-9q8"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sJO-se-Tje" appends="YES" id="s3V-iG-aF4"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -116,10 +126,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="edt-3H-0JU"/>
                     </view>
+                    <navigationItem key="navigationItem" id="EBZ-TD-wYR"/>
+                    <connections>
+                        <outlet property="constraintBottomScroll" destination="aey-I3-uo3" id="n2W-td-kdS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIw-dv-a8W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sJO-se-Tje">
+                    <connections>
+                        <action selector="clickBtnCloseKeyboard:" destination="x1E-UM-q3p" id="nth-CO-3ft"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-294.20289855072468" y="-271.20535714285711"/>
+            <point key="canvasLocation" x="615.94202898550725" y="-271.20535714285711"/>
         </scene>
         <!--Recuperar Password View Controller-->
         <scene sceneID="oj4-H3-KLC">
@@ -130,23 +149,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-Qu-YGt">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3h-jG-Zvf">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="lhE-cr-ISo"/>
+                                            <constraint firstAttribute="height" id="lhE-cr-ISo"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuperar password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-8e-k3u">
-                                        <rect key="frame" x="30" y="70" width="354" height="21"/>
+                                        <rect key="frame" x="30" y="40" width="354" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar correo electronico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGx-am-MmT">
-                                        <rect key="frame" x="30" y="131" width="354" height="40"/>
+                                        <rect key="frame" x="30" y="101" width="354" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Tvu-J2-tNs"/>
                                         </constraints>
@@ -154,13 +173,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrese su correo electronico y se le enviara un enlace de confirmacion para recuperar su password." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP3-kK-VPh">
-                                        <rect key="frame" x="30" y="211" width="354" height="59.666666666666686"/>
+                                        <rect key="frame" x="30" y="181" width="354" height="59.666666666666657"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fr-Xv-9QA">
-                                        <rect key="frame" x="30" y="320.66666666666669" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="290.66666666666669" width="354" height="50"/>
                                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="M8E-77-mpJ"/>
@@ -172,6 +191,7 @@
                                         </state>
                                     </button>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Kg0-8e-k3u" secondAttribute="trailing" constant="30" id="0wM-yG-Bl9"/>
                                     <constraint firstItem="Kg0-8e-k3u" firstAttribute="top" secondItem="P3h-jG-Zvf" secondAttribute="bottom" constant="40" id="3dI-bi-Rdl"/>
@@ -191,6 +211,9 @@
                                     <constraint firstAttribute="trailing" secondItem="P3h-jG-Zvf" secondAttribute="trailing" id="xL9-rf-lEC"/>
                                     <constraint firstItem="P3h-jG-Zvf" firstAttribute="width" secondItem="fVn-Qu-YGt" secondAttribute="width" id="zGK-jv-g5Y"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="25H-m5-TXJ" appends="YES" id="hFB-s8-2JC"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -202,10 +225,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o4u-kO-jr2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jut-cm-7r5"/>
+                    <connections>
+                        <outlet property="constraintBottomScroll" destination="7hN-DK-7KE" id="h6s-KZ-DRz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2H-i3-d6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="25H-m5-TXJ">
+                    <connections>
+                        <action selector="clickBtnCloseKeyboard:" destination="dav-5E-35P" id="2om-CI-EnQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="550.72463768115949" y="-462.05357142857139"/>
+            <point key="canvasLocation" x="1460.8695652173915" y="-462.05357142857139"/>
         </scene>
         <!--Registro View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -216,7 +248,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUA-T4-BTd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1156"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1112"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4n-Wq-iRF">
                                         <rect key="frame" x="0.0" y="15" width="414" height="1"/>
@@ -275,7 +307,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obw-XH-PGp">
-                                        <rect key="frame" x="25" y="425.66666666666669" width="364" height="75"/>
+                                        <rect key="frame" x="25" y="425.66666666666663" width="364" height="75"/>
                                         <color key="backgroundColor" red="0.83138996359999995" green="0.91056042910000001" blue="0.95456343889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="d4t-Ck-WTw"/>
@@ -323,12 +355,12 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ml-8X-4g8">
                                         <rect key="frame" x="25" y="858.66666666666663" width="364" height="50"/>
-                                        <color key="backgroundColor" red="0.82124352331606221" green="0.40130851832502251" blue="0.30136519698749314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="mPg-ZR-rDH"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="REGISTRARSE">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Registrarse">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -394,6 +426,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="QPl-Th-aSP"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="constraintBottomScroll" destination="YwN-ol-qRK" id="vzL-Ma-iAb"/>
@@ -412,7 +445,25 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="609" y="301"/>
+            <point key="canvasLocation" x="1460.8695652173915" y="300.66964285714283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d1l-Ll-eEh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pvy-eg-XRd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4fy-KY-VKv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x1E-UM-q3p" kind="relationship" relationship="rootViewController" id="BDX-iH-dMr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8Y-Wh-d6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294.20289855072468" y="-271.20535714285711"/>
         </scene>
     </scenes>
 </document>
