@@ -131,6 +131,9 @@
                                         <state key="normal" title="REGISTRARSE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clickBtnRegistrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hNE-0d-xcW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <gestureRecognizers/>
@@ -196,6 +199,10 @@
                         <outlet property="constraintBottomScroll" destination="YwN-ol-qRK" id="vzL-Ma-iAb"/>
                         <outlet property="pickerCarrera" destination="Obw-XH-PGp" id="tsK-9w-VAF"/>
                         <outlet property="pickerSede" destination="Cgn-dr-Dk5" id="Zi6-En-Pn7"/>
+                        <outlet property="txtApellidos" destination="Loq-OF-pP9" id="ax9-88-GXL"/>
+                        <outlet property="txtNombres" destination="omm-Mu-S1q" id="PtL-hD-mN4"/>
+                        <outlet property="txtPassword" destination="NlY-9e-zUT" id="oXz-sH-siE"/>
+                        <outlet property="txtUsuario" destination="HQZ-kw-qg5" id="YGx-zY-NED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
