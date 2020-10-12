@@ -18,6 +18,7 @@
 		487E52812530DE4D00AF33AC /* RecuperarPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E52802530DE4D00AF33AC /* RecuperarPasswordViewController.swift */; };
 		48951F452534EC9E0029E5F3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */; };
 		48951F472534F7940029E5F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48951F462534F7940029E5F3 /* Colors.xcassets */; };
+		48951F492534F9240029E5F3 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48951F482534F9240029E5F3 /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		487E52802530DE4D00AF33AC /* RecuperarPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecuperarPasswordViewController.swift; sourceTree = "<group>"; };
 		48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		48951F462534F7940029E5F3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		48951F482534F9240029E5F3 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				487E52802530DE4D00AF33AC /* RecuperarPasswordViewController.swift */,
 				48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */,
 				48951F462534F7940029E5F3 /* Colors.xcassets */,
+				48951F482534F9240029E5F3 /* PickerViewController.swift */,
 			);
 			path = InstaISIL;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				487E527D2530DDE000AF33AC /* InicioSesionViewController.swift in Sources */,
 				487E52812530DE4D00AF33AC /* RecuperarPasswordViewController.swift in Sources */,
+				48951F492534F9240029E5F3 /* PickerViewController.swift in Sources */,
 				48951F452534EC9E0029E5F3 /* DatePickerViewController.swift in Sources */,
 				485341112522212A00E47927 /* ViewController.swift in Sources */,
 				483CC17C252EA17F001F24E0 /* RegistroViewController.swift in Sources */,

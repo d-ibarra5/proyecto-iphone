@@ -15,6 +15,16 @@ extension RegistroViewController: UITextFieldDelegate {
             self.performSegue(withIdentifier: "DatePickerViewController", sender: nil)
             return false  
         }
+        else if self.txtSede == textField {
+            pickerActual = "Sede"
+            self.performSegue(withIdentifier: "PickerViewController", sender: nil)
+            return false
+        }
+        else if self.txtCarrera == textField {
+            pickerActual = "Carrera"
+            self.performSegue(withIdentifier: "PickerViewController", sender: nil)
+            return false
+        }
         return true
     }
     
@@ -30,6 +40,19 @@ extension RegistroViewController: DatePickerViewControllerDelegate {
     }
 }
 
+extension RegistroViewController: PickerViewControllerDelegate {
+    
+    func pickerViewController(_ controller: PickerViewController, didSelectItem item: String) {
+         if pickerActual == "Sede" {
+            self.txtSede.text = item
+        }
+        else if pickerActual == "Carrera" {
+            self.txtCarrera.text = item
+        }
+    }
+    
+}
+
 class RegistroViewController: UIViewController {
         
     @IBOutlet weak var constraintBottomScroll: NSLayoutConstraint!
@@ -41,6 +64,8 @@ class RegistroViewController: UIViewController {
     @IBOutlet weak var txtSede: UITextField!
     @IBOutlet weak var txtCarrera: UITextField!
     @IBOutlet weak var txtFecha: UITextField!
+    
+    var pickerActual: String = ""
     
     let sedes = ["Jesus Maria", "Miraflores", "La Molina", "San Isidro"]
     
@@ -143,6 +168,20 @@ class RegistroViewController: UIViewController {
         if let controller = segue.destination as? DatePickerViewController {
             controller.delegate =  self
         }
+        else if let controller = segue.destination as? PickerViewController {
+            controller.delegate = self
+
+            print("HECHO111")
+            if pickerActual == "Sede" {
+                print("HECHO")
+                controller.arrayItems = sedes
+            }
+            else if pickerActual == "Carrera" {
+                controller.arrayItems = carreras
+            }
+        }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

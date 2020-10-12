@@ -3,6 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -424,6 +425,7 @@
                         <outlet property="txtSede" destination="VJE-Gs-Fre" id="nJK-9G-yE8"/>
                         <outlet property="txtUsuario" destination="HQZ-kw-qg5" id="YGx-zY-NED"/>
                         <segue destination="1Av-x5-vB3" kind="presentation" identifier="DatePickerViewController" animates="NO" modalPresentationStyle="overCurrentContext" id="PxN-Ik-QvP"/>
+                        <segue destination="f5u-Ab-Ae0" kind="presentation" identifier="PickerViewController" animates="NO" modalPresentationStyle="overCurrentContext" id="yGg-0f-kGs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -434,6 +436,60 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1460.8695652173915" y="300.66964285714283"/>
+        </scene>
+        <!--Picker View Controller-->
+        <scene sceneID="AoQ-ca-n00">
+            <objects>
+                <viewController id="f5u-Ab-Ae0" customClass="PickerViewController" customModule="InstaISIL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hQu-bn-gFE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JsM-d4-Jxs">
+                                <rect key="frame" x="0.0" y="660" width="414" height="236"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glo-up-PLl">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="f5u-Ab-Ae0" id="kym-x1-2p3"/>
+                                            <outlet property="delegate" destination="f5u-Ab-Ae0" id="Qtx-x5-gZY"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="glo-up-PLl" firstAttribute="leading" secondItem="JsM-d4-Jxs" secondAttribute="leading" id="83a-TP-c8K"/>
+                                    <constraint firstAttribute="trailing" secondItem="glo-up-PLl" secondAttribute="trailing" id="Bry-EQ-nWX"/>
+                                    <constraint firstAttribute="bottom" secondItem="glo-up-PLl" secondAttribute="bottom" constant="20" id="Z0O-Wd-F1l"/>
+                                    <constraint firstItem="glo-up-PLl" firstAttribute="top" secondItem="JsM-d4-Jxs" secondAttribute="top" id="dLN-IP-3UH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="Black50"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="JsM-d4-Jxs" firstAttribute="trailing" secondItem="3re-zG-b8A" secondAttribute="trailing" id="aZy-lH-24X"/>
+                            <constraint firstAttribute="bottom" secondItem="JsM-d4-Jxs" secondAttribute="bottom" id="rzs-8m-ME0"/>
+                            <constraint firstItem="JsM-d4-Jxs" firstAttribute="leading" secondItem="3re-zG-b8A" secondAttribute="leading" id="vmS-Hl-bsb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3re-zG-b8A"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="EsQ-wK-cWN" appends="YES" id="Too-r9-7w9"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="qyr-Wl-iHr"/>
+                    <connections>
+                        <outlet property="pickerContainer" destination="JsM-d4-Jxs" id="hcF-tS-3Ub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m7B-0S-v1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="EsQ-wK-cWN">
+                    <connections>
+                        <action selector="tapToClose:" destination="f5u-Ab-Ae0" id="B7N-74-6Q8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2400" y="748"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="8FA-rb-uqs">
@@ -468,7 +524,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="Black50"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2kh-YB-SmH" firstAttribute="trailing" secondItem="qGa-in-oM3" secondAttribute="trailing" id="PVk-cD-yX0"/>
@@ -492,7 +548,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2181" y="69"/>
+            <point key="canvasLocation" x="2401" y="51"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d1l-Ll-eEh">
@@ -513,4 +569,9 @@
             <point key="canvasLocation" x="-294.20289855072468" y="-271.20535714285711"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Black50">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
