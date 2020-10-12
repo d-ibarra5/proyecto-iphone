@@ -45,7 +45,7 @@
                                             <constraint firstAttribute="height" constant="40" id="gLJ-7K-z67"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kj-Ct-Hhw">
                                         <rect key="frame" x="20" y="346.66666666666669" width="374" height="50"/>
@@ -57,6 +57,9 @@
                                         <state key="normal" title="Iniciar sesion">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnIniciarSesion:" destination="x1E-UM-q3p" eventType="touchUpInside" id="DC1-aJ-l4x"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zx5-Hl-7ce">
                                         <rect key="frame" x="20" y="446.66666666666663" width="374" height="30"/>
@@ -129,6 +132,8 @@
                     <navigationItem key="navigationItem" id="EBZ-TD-wYR"/>
                     <connections>
                         <outlet property="constraintBottomScroll" destination="aey-I3-uo3" id="n2W-td-kdS"/>
+                        <outlet property="txtPassword" destination="Ahn-JJ-2L9" id="7Rc-Ab-29v"/>
+                        <outlet property="txtUsuario" destination="M0i-Sj-0hc" id="8K1-L0-s0S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIw-dv-a8W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -189,6 +194,9 @@
                                         <state key="normal" title="Enviar enlace de recuperacion">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnConfirmar:" destination="dav-5E-35P" eventType="touchUpInside" id="866-X0-HHO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <gestureRecognizers/>
@@ -228,6 +236,7 @@
                     <navigationItem key="navigationItem" id="Jut-cm-7r5"/>
                     <connections>
                         <outlet property="constraintBottomScroll" destination="7hN-DK-7KE" id="h6s-KZ-DRz"/>
+                        <outlet property="txtEmail" destination="KGx-am-MmT" id="4Oh-tT-EQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2H-i3-d6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -306,55 +315,30 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obw-XH-PGp">
-                                        <rect key="frame" x="25" y="425.66666666666663" width="364" height="75"/>
-                                        <color key="backgroundColor" red="0.83138996359999995" green="0.91056042910000001" blue="0.95456343889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar sede" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJE-Gs-Fre">
+                                        <rect key="frame" x="25" y="384" width="364" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="d4t-Ck-WTw"/>
+                                            <constraint firstAttribute="height" constant="40" id="cfo-u8-XMR"/>
                                         </constraints>
-                                    </pickerView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgn-dr-Dk5">
-                                        <rect key="frame" x="25" y="562" width="364" height="75"/>
-                                        <color key="backgroundColor" red="0.83138996359999995" green="0.91056042910000001" blue="0.95456343889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="2jn-m1-m8x"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar carrera" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="snC-PK-Jha">
+                                        <rect key="frame" x="25" y="444" width="364" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="7yA-3j-094"/>
+                                            <constraint firstAttribute="height" constant="40" id="Tcw-GM-gEC"/>
                                         </constraints>
-                                    </pickerView>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="2G7-9K-Bc6">
-                                        <rect key="frame" x="25" y="698.66666666666663" width="364" height="120"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="g7w-wW-Mj6"/>
-                                        </constraints>
-                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-1293886800">
-                                            <!--1960-01-01 11:00:00 +0000-->
-                                        </date>
-                                        <date key="maximumDate" timeIntervalSinceReferenceDate="126183600">
-                                            <!--2004-12-31 11:00:00 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de nacimiento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1F6-NS-Gyp">
-                                        <rect key="frame" x="25" y="657" width="364" height="21.666666666666629"/>
-                                        <color key="backgroundColor" red="0.29962029423993747" green="0.62844549551106443" blue="0.95456343889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccionar carrera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yz2-Xi-diG">
-                                        <rect key="frame" x="25" y="384" width="364" height="21.666666666666686"/>
-                                        <color key="backgroundColor" red="0.29962029423993747" green="0.62844549551106443" blue="0.95456343889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccionar sede" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYW-jA-FT0">
-                                        <rect key="frame" x="25" y="520.66666666666663" width="364" height="21.333333333333371"/>
-                                        <color key="backgroundColor" red="0.29962029423993747" green="0.62844549551106443" blue="0.95456343889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="M7y-Hg-IYE"/>
+                                        </connections>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ml-8X-4g8">
-                                        <rect key="frame" x="25" y="858.66666666666663" width="364" height="50"/>
+                                        <rect key="frame" x="25" y="584" width="364" height="50"/>
                                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="mPg-ZR-rDH"/>
@@ -367,50 +351,52 @@
                                             <action selector="clickBtnRegistrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hNE-0d-xcW"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar fecha de nacimiento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QEa-BI-eFE">
+                                        <rect key="frame" x="25" y="504" width="364" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fiN-Ub-PC5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="U7V-qU-wyD"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Loq-OF-pP9" firstAttribute="trailing" secondItem="omm-Mu-S1q" secondAttribute="trailing" id="5LW-g8-iz1"/>
-                                    <constraint firstAttribute="trailing" secondItem="Cgn-dr-Dk5" secondAttribute="trailing" constant="25" id="6G1-qb-E7v"/>
                                     <constraint firstItem="omm-Mu-S1q" firstAttribute="top" secondItem="ypQ-IR-jvW" secondAttribute="bottom" constant="30" id="7ab-vY-QjW"/>
-                                    <constraint firstItem="yz2-Xi-diG" firstAttribute="top" secondItem="NlY-9e-zUT" secondAttribute="bottom" constant="20" id="CIJ-rN-W1D"/>
                                     <constraint firstAttribute="trailing" secondItem="omm-Mu-S1q" secondAttribute="trailing" constant="25" id="CfH-Ph-QTJ"/>
                                     <constraint firstItem="NlY-9e-zUT" firstAttribute="top" secondItem="HQZ-kw-qg5" secondAttribute="bottom" constant="20" id="Cit-48-tLZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Obw-XH-PGp" secondAttribute="trailing" constant="25" id="Efw-VM-JYZ"/>
+                                    <constraint firstItem="VJE-Gs-Fre" firstAttribute="top" secondItem="NlY-9e-zUT" secondAttribute="bottom" constant="20" id="Enn-yv-Oxp"/>
                                     <constraint firstItem="HQZ-kw-qg5" firstAttribute="trailing" secondItem="Loq-OF-pP9" secondAttribute="trailing" id="G3r-DT-OTD"/>
-                                    <constraint firstItem="yz2-Xi-diG" firstAttribute="leading" secondItem="NlY-9e-zUT" secondAttribute="leading" id="H3x-Ph-jpC"/>
-                                    <constraint firstItem="7ml-8X-4g8" firstAttribute="leading" secondItem="1F6-NS-Gyp" secondAttribute="leading" id="H9b-WF-sfS"/>
+                                    <constraint firstItem="VJE-Gs-Fre" firstAttribute="leading" secondItem="NlY-9e-zUT" secondAttribute="leading" id="Gd9-79-BSv"/>
+                                    <constraint firstItem="VJE-Gs-Fre" firstAttribute="trailing" secondItem="NlY-9e-zUT" secondAttribute="trailing" id="HJ4-QH-y5i"/>
+                                    <constraint firstItem="snC-PK-Jha" firstAttribute="top" secondItem="VJE-Gs-Fre" secondAttribute="bottom" constant="20" id="IdY-j3-XeQ"/>
+                                    <constraint firstItem="7ml-8X-4g8" firstAttribute="trailing" secondItem="QEa-BI-eFE" secondAttribute="trailing" id="KnO-RH-f1L"/>
+                                    <constraint firstItem="snC-PK-Jha" firstAttribute="trailing" secondItem="VJE-Gs-Fre" secondAttribute="trailing" id="Nps-fH-dRw"/>
                                     <constraint firstItem="NlY-9e-zUT" firstAttribute="trailing" secondItem="HQZ-kw-qg5" secondAttribute="trailing" id="Od5-Sh-CFo"/>
                                     <constraint firstItem="w4n-Wq-iRF" firstAttribute="width" secondItem="JUA-T4-BTd" secondAttribute="width" id="Pav-55-IDN"/>
                                     <constraint firstAttribute="trailing" secondItem="w4n-Wq-iRF" secondAttribute="trailing" id="Q4R-Px-cHo"/>
-                                    <constraint firstItem="1F6-NS-Gyp" firstAttribute="leading" secondItem="qYW-jA-FT0" secondAttribute="leading" id="QFB-Rc-EqS"/>
-                                    <constraint firstItem="7ml-8X-4g8" firstAttribute="trailing" secondItem="1F6-NS-Gyp" secondAttribute="trailing" id="RNe-jf-U5I"/>
-                                    <constraint firstItem="Obw-XH-PGp" firstAttribute="top" secondItem="yz2-Xi-diG" secondAttribute="bottom" constant="20" id="Stz-24-51d"/>
                                     <constraint firstItem="HQZ-kw-qg5" firstAttribute="top" secondItem="Loq-OF-pP9" secondAttribute="bottom" constant="20" id="UAh-IB-C1c"/>
-                                    <constraint firstItem="qYW-jA-FT0" firstAttribute="trailing" secondItem="yz2-Xi-diG" secondAttribute="trailing" id="V4G-mY-jC1"/>
                                     <constraint firstItem="omm-Mu-S1q" firstAttribute="leading" secondItem="JUA-T4-BTd" secondAttribute="leading" constant="25" id="Xgv-vH-exE"/>
-                                    <constraint firstItem="qYW-jA-FT0" firstAttribute="leading" secondItem="yz2-Xi-diG" secondAttribute="leading" id="YQT-oF-NAm"/>
-                                    <constraint firstItem="7ml-8X-4g8" firstAttribute="top" secondItem="2G7-9K-Bc6" secondAttribute="bottom" constant="40" id="YUd-ea-jET"/>
                                     <constraint firstAttribute="bottom" secondItem="7ml-8X-4g8" secondAttribute="bottom" constant="35" id="YwN-ol-qRK"/>
-                                    <constraint firstItem="1F6-NS-Gyp" firstAttribute="top" secondItem="Cgn-dr-Dk5" secondAttribute="bottom" constant="20" id="alu-zQ-odP"/>
+                                    <constraint firstItem="snC-PK-Jha" firstAttribute="leading" secondItem="VJE-Gs-Fre" secondAttribute="leading" id="d3j-je-zdZ"/>
                                     <constraint firstItem="Loq-OF-pP9" firstAttribute="leading" secondItem="omm-Mu-S1q" secondAttribute="leading" id="dEk-oO-PBg"/>
-                                    <constraint firstItem="Cgn-dr-Dk5" firstAttribute="leading" secondItem="JUA-T4-BTd" secondAttribute="leading" constant="25" id="dqq-Zp-Yfa"/>
-                                    <constraint firstAttribute="trailing" secondItem="2G7-9K-Bc6" secondAttribute="trailing" constant="25" id="eOI-gz-zuI"/>
                                     <constraint firstAttribute="trailing" secondItem="ypQ-IR-jvW" secondAttribute="trailing" id="gKO-CW-Y8N"/>
                                     <constraint firstItem="ypQ-IR-jvW" firstAttribute="top" secondItem="w4n-Wq-iRF" secondAttribute="bottom" constant="10" id="h82-lh-Zjk"/>
-                                    <constraint firstItem="qYW-jA-FT0" firstAttribute="top" secondItem="Obw-XH-PGp" secondAttribute="bottom" constant="20" id="hJM-7F-aSe"/>
                                     <constraint firstItem="w4n-Wq-iRF" firstAttribute="leading" secondItem="JUA-T4-BTd" secondAttribute="leading" id="hef-BO-4EE"/>
+                                    <constraint firstItem="7ml-8X-4g8" firstAttribute="top" secondItem="QEa-BI-eFE" secondAttribute="bottom" constant="40" id="iKN-Wc-hK4"/>
+                                    <constraint firstItem="QEa-BI-eFE" firstAttribute="trailing" secondItem="snC-PK-Jha" secondAttribute="trailing" id="ivO-Vt-EP1"/>
                                     <constraint firstItem="NlY-9e-zUT" firstAttribute="leading" secondItem="HQZ-kw-qg5" secondAttribute="leading" id="k0G-XS-fRn"/>
-                                    <constraint firstItem="2G7-9K-Bc6" firstAttribute="top" secondItem="1F6-NS-Gyp" secondAttribute="bottom" constant="20" id="k7H-xF-bc9"/>
-                                    <constraint firstItem="Obw-XH-PGp" firstAttribute="leading" secondItem="JUA-T4-BTd" secondAttribute="leading" constant="25" id="ohu-Ui-WnP"/>
+                                    <constraint firstItem="QEa-BI-eFE" firstAttribute="top" secondItem="snC-PK-Jha" secondAttribute="bottom" constant="20" id="nlV-B7-PhN"/>
                                     <constraint firstItem="ypQ-IR-jvW" firstAttribute="leading" secondItem="JUA-T4-BTd" secondAttribute="leading" id="pLe-AH-WLJ"/>
-                                    <constraint firstItem="yz2-Xi-diG" firstAttribute="trailing" secondItem="NlY-9e-zUT" secondAttribute="trailing" id="pYj-KL-W82"/>
-                                    <constraint firstItem="2G7-9K-Bc6" firstAttribute="leading" secondItem="JUA-T4-BTd" secondAttribute="leading" constant="25" id="rDK-fC-0VQ"/>
-                                    <constraint firstItem="1F6-NS-Gyp" firstAttribute="trailing" secondItem="qYW-jA-FT0" secondAttribute="trailing" id="rIH-He-JyK"/>
+                                    <constraint firstItem="QEa-BI-eFE" firstAttribute="leading" secondItem="snC-PK-Jha" secondAttribute="leading" id="qcV-Vu-ct6"/>
                                     <constraint firstItem="Loq-OF-pP9" firstAttribute="top" secondItem="omm-Mu-S1q" secondAttribute="bottom" constant="20" id="rSf-XS-VhF"/>
                                     <constraint firstItem="HQZ-kw-qg5" firstAttribute="leading" secondItem="Loq-OF-pP9" secondAttribute="leading" id="sYy-34-Xbg"/>
-                                    <constraint firstItem="Cgn-dr-Dk5" firstAttribute="top" secondItem="qYW-jA-FT0" secondAttribute="bottom" constant="20" id="t9a-lI-Are"/>
                                     <constraint firstItem="w4n-Wq-iRF" firstAttribute="top" secondItem="JUA-T4-BTd" secondAttribute="top" constant="15" id="uTq-C4-fG2"/>
+                                    <constraint firstItem="7ml-8X-4g8" firstAttribute="leading" secondItem="QEa-BI-eFE" secondAttribute="leading" id="wOg-45-l4b"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Hhm-3b-gdu" appends="YES" id="Wzg-zM-jZg"/>
@@ -430,12 +416,14 @@
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="constraintBottomScroll" destination="YwN-ol-qRK" id="vzL-Ma-iAb"/>
-                        <outlet property="pickerCarrera" destination="Obw-XH-PGp" id="tsK-9w-VAF"/>
-                        <outlet property="pickerSede" destination="Cgn-dr-Dk5" id="Zi6-En-Pn7"/>
                         <outlet property="txtApellidos" destination="Loq-OF-pP9" id="ax9-88-GXL"/>
+                        <outlet property="txtCarrera" destination="snC-PK-Jha" id="NJ9-pZ-dPF"/>
+                        <outlet property="txtFecha" destination="QEa-BI-eFE" id="4Gy-A7-S4W"/>
                         <outlet property="txtNombres" destination="omm-Mu-S1q" id="PtL-hD-mN4"/>
                         <outlet property="txtPassword" destination="NlY-9e-zUT" id="oXz-sH-siE"/>
+                        <outlet property="txtSede" destination="VJE-Gs-Fre" id="nJK-9G-yE8"/>
                         <outlet property="txtUsuario" destination="HQZ-kw-qg5" id="YGx-zY-NED"/>
+                        <segue destination="1Av-x5-vB3" kind="presentation" identifier="DatePickerViewController" animates="NO" modalPresentationStyle="overCurrentContext" id="PxN-Ik-QvP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -446,6 +434,65 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1460.8695652173915" y="300.66964285714283"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="8FA-rb-uqs">
+            <objects>
+                <viewController id="1Av-x5-vB3" customClass="DatePickerViewController" customModule="InstaISIL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ze6-sy-R1n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-YB-SmH">
+                                <rect key="frame" x="0.0" y="660" width="414" height="236"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="IlV-Y2-rsK">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-1293886800">
+                                            <!--1960-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="126183600">
+                                            <!--2004-12-31 11:00:00 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="changeDateSelect:" destination="1Av-x5-vB3" eventType="valueChanged" id="0ct-iZ-JDp"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IlV-Y2-rsK" secondAttribute="trailing" id="4v0-0n-ccu"/>
+                                    <constraint firstAttribute="bottom" secondItem="IlV-Y2-rsK" secondAttribute="bottom" constant="20" id="UHP-Ov-Acf"/>
+                                    <constraint firstItem="IlV-Y2-rsK" firstAttribute="leading" secondItem="2kh-YB-SmH" secondAttribute="leading" id="hLy-se-f5w"/>
+                                    <constraint firstItem="IlV-Y2-rsK" firstAttribute="top" secondItem="2kh-YB-SmH" secondAttribute="top" id="hqQ-id-KQm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="2kh-YB-SmH" firstAttribute="trailing" secondItem="qGa-in-oM3" secondAttribute="trailing" id="PVk-cD-yX0"/>
+                            <constraint firstAttribute="bottom" secondItem="2kh-YB-SmH" secondAttribute="bottom" id="sQf-mr-iZj"/>
+                            <constraint firstItem="2kh-YB-SmH" firstAttribute="leading" secondItem="qGa-in-oM3" secondAttribute="leading" id="uoY-0K-iJQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qGa-in-oM3"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7Zr-eB-tL6" appends="YES" id="HQg-17-wkZ"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="TFK-aY-r73"/>
+                    <connections>
+                        <outlet property="pickerContainer" destination="2kh-YB-SmH" id="Cbo-HQ-SSc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbL-JK-mXt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7Zr-eB-tL6">
+                    <connections>
+                        <action selector="tapToClose:" destination="1Av-x5-vB3" id="0x1-OT-p76"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2181" y="69"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d1l-Ll-eEh">

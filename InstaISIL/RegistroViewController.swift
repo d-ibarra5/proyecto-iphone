@@ -8,16 +8,39 @@
 
 import UIKit
 
-class RegistroViewController: UIViewController {
+extension RegistroViewController: UITextFieldDelegate {
     
-    @IBOutlet weak var pickerCarrera: UIPickerView!
-    @IBOutlet weak var pickerSede: UIPickerView!
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if self.txtFecha == textField {
+            self.performSegue(withIdentifier: "DatePickerViewController", sender: nil)
+            return false  
+        }
+        return true
+    }
+    
+}
+
+extension RegistroViewController: DatePickerViewControllerDelegate {
+    func datePickerViewController(_ controller: DatePickerViewController, didDateSelect date: Date) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd 'de' MMMM 'del' yyyy"
+        dateFormatter.locale = Locale(identifier: "es_PE")
+        self.txtFecha.text = dateFormatter.string(from: date)
+    }
+}
+
+class RegistroViewController: UIViewController {
+        
     @IBOutlet weak var constraintBottomScroll: NSLayoutConstraint!
     
     @IBOutlet weak var txtNombres: UITextField!
     @IBOutlet weak var txtApellidos: UITextField!
     @IBOutlet weak var txtUsuario: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtSede: UITextField!
+    @IBOutlet weak var txtCarrera: UITextField!
+    @IBOutlet weak var txtFecha: UITextField!
     
     let sedes = ["Jesus Maria", "Miraflores", "La Molina", "San Isidro"]
     
@@ -57,6 +80,18 @@ class RegistroViewController: UIViewController {
             MensajeAlerta(titulo: "Password vacio", mensaje: "Debe insertar su password")
             return
         }
+        guard let sede = txtSede.text, !sede.isEmpty else {
+            MensajeAlerta(titulo: "Sede vacia", mensaje: "Debe elegir su sede")
+            return
+        }
+        guard let carrera = txtCarrera.text, !carrera.isEmpty else {
+            MensajeAlerta(titulo: "Carrera vacia", mensaje: "Debe elegir su carrera")
+            return
+        }
+        guard let fecha = txtFecha.text, !fecha.isEmpty else {
+            MensajeAlerta(titulo: "Fecha de nacimiento vacia", mensaje: "Debe elegir su fecha de nacimiento")
+            return
+        }
                 
         //Validar caracteres con regex
         let usuarioCorrecto = ValidarConRegex(patron: "^[0-9a-zA-Z\\_]{7,18}$", str: usuario)
@@ -85,9 +120,11 @@ class RegistroViewController: UIViewController {
         }
         
         //Si todo salio bien
+        
         MensajeAlerta(titulo: "Usuario registrado correctamente!", mensaje: "Bienvenido, \(usuario)! (\(nombres) \(apellidos)) \n" +
-        "Carrera: \(carreras[pickerCarrera.selectedRow(inComponent: 0)]) \n" +
-        "Sede: \(sedes[pickerSede.selectedRow(inComponent: 0)])")
+        "Carrera: \(carrera) \n" +
+        "Sede: \(sede) \n" +
+            "Fecha de nacimiento: \(fecha)")
                 
     }
     
@@ -98,10 +135,14 @@ class RegistroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerCarrera.dataSource = self
-        pickerCarrera.delegate = self
-        pickerSede.dataSource = self
-        pickerSede.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let controller = segue.destination as? DatePickerViewController {
+            controller.delegate =  self
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -147,35 +188,4 @@ class RegistroViewController: UIViewController {
         }
     }
 
-}
-
-extension RegistroViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == pickerCarrera {
-            return carreras.count
-        }
-        else if pickerView == pickerSede {
-            return sedes.count
-        }
-        return 1
-    }
-    
-    
-}
-
-
-extension RegistroViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == pickerCarrera {
-            return carreras[row]
-        }
-        else if pickerView == pickerSede {
-            return sedes[row]
-        }
-        return "Ninguno"
-    }
 }

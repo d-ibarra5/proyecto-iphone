@@ -10,7 +10,26 @@ import UIKit
 
 class InicioSesionViewController: UIViewController {
     
+    
+    @IBOutlet weak var txtUsuario: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var constraintBottomScroll: NSLayoutConstraint!
+    
+    @IBAction func btnIniciarSesion(_ sender: Any) {
+        //No permitir campos vacios
+        guard let usuario = txtUsuario.text, !usuario.isEmpty else {
+            MensajeAlerta(titulo: "Usuario vacio", mensaje: "Debe insertar su nombre de usuario")
+            return
+        }
+        guard let password = txtPassword.text, !password.isEmpty else {
+            MensajeAlerta(titulo: "Password vacio", mensaje: "Debe insertar su password")
+            return
+        }
+        
+        //Si todo salio bien
+        MensajeAlerta(titulo: "Bienvenido!", mensaje: "Bienvenido, \(usuario)!")
+        
+    }
     
     func MensajeAlerta (titulo: String, mensaje: String) {
         let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)

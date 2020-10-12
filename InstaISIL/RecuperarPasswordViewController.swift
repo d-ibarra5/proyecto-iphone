@@ -10,7 +10,33 @@ import UIKit
 
 class RecuperarPasswordViewController: UIViewController {
   
-    @IBOutlet weak var constraintBottomScroll: NSLayoutConstraint!    
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var constraintBottomScroll: NSLayoutConstraint!
+      
+     
+    @IBAction func btnConfirmar(_ sender: Any) {
+        
+        //No permitir campos vacios
+        guard let email = txtEmail.text, !email.isEmpty else {
+            MensajeAlerta(titulo: "Inserte email", mensaje: "Debe insertar su email")
+            return
+        }
+        
+        //Validar caracteres con regex
+        let emailRegEx = "[A-Z0-9a-z._-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        
+        let emailCorrecto = emailPred.evaluate(with: email)
+        
+        if emailCorrecto == false {
+            MensajeAlerta(titulo: "Email no valido", mensaje: "Por favor ingrese un correo valido.")
+            return
+        }
+        
+        //Si todo salio bien
+        MensajeAlerta(titulo: "Mensaje enviado!", mensaje: "Se ha enviado un mensaje con el link de recuperacion de password a \(email)")
+                     
+    }
     
     func MensajeAlerta (titulo: String, mensaje: String) {
         let alerta = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)

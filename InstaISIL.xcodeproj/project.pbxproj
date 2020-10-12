@@ -16,6 +16,8 @@
 		485341192522212C00E47927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 485341172522212C00E47927 /* LaunchScreen.storyboard */; };
 		487E527D2530DDE000AF33AC /* InicioSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E527C2530DDE000AF33AC /* InicioSesionViewController.swift */; };
 		487E52812530DE4D00AF33AC /* RecuperarPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E52802530DE4D00AF33AC /* RecuperarPasswordViewController.swift */; };
+		48951F452534EC9E0029E5F3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */; };
+		48951F472534F7940029E5F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48951F462534F7940029E5F3 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		4853411A2522212C00E47927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		487E527C2530DDE000AF33AC /* InicioSesionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioSesionViewController.swift; sourceTree = "<group>"; };
 		487E52802530DE4D00AF33AC /* RecuperarPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecuperarPasswordViewController.swift; sourceTree = "<group>"; };
+		48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		48951F462534F7940029E5F3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				483CC17B252EA17F001F24E0 /* RegistroViewController.swift */,
 				487E527C2530DDE000AF33AC /* InicioSesionViewController.swift */,
 				487E52802530DE4D00AF33AC /* RecuperarPasswordViewController.swift */,
+				48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */,
+				48951F462534F7940029E5F3 /* Colors.xcassets */,
 			);
 			path = InstaISIL;
 			sourceTree = "<group>";
@@ -135,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				485341192522212C00E47927 /* LaunchScreen.storyboard in Resources */,
+				48951F472534F7940029E5F3 /* Colors.xcassets in Resources */,
 				485341162522212C00E47927 /* Assets.xcassets in Resources */,
 				485341142522212A00E47927 /* Main.storyboard in Resources */,
 			);
@@ -149,6 +156,7 @@
 			files = (
 				487E527D2530DDE000AF33AC /* InicioSesionViewController.swift in Sources */,
 				487E52812530DE4D00AF33AC /* RecuperarPasswordViewController.swift in Sources */,
+				48951F452534EC9E0029E5F3 /* DatePickerViewController.swift in Sources */,
 				485341112522212A00E47927 /* ViewController.swift in Sources */,
 				483CC17C252EA17F001F24E0 /* RegistroViewController.swift in Sources */,
 				4853410D2522212A00E47927 /* AppDelegate.swift in Sources */,
