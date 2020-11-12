@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3462CE180E25EDD9ECB41C06 /* Pods_InstaISIL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFF8742B6B78E209AFA4E10 /* Pods_InstaISIL.framework */; };
 		483CC17C252EA17F001F24E0 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483CC17B252EA17F001F24E0 /* RegistroViewController.swift */; };
 		4853410D2522212A00E47927 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4853410C2522212A00E47927 /* AppDelegate.swift */; };
 		4853410F2522212A00E47927 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4853410E2522212A00E47927 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 		48951F452534EC9E0029E5F3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */; };
 		48951F472534F7940029E5F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48951F462534F7940029E5F3 /* Colors.xcassets */; };
 		48951F492534F9240029E5F3 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48951F482534F9240029E5F3 /* PickerViewController.swift */; };
+		4E1932C6255DA083003E61F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E1932C5255DA083003E61F1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		48951F462534F7940029E5F3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		48951F482534F9240029E5F3 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		4E1932C5255DA083003E61F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7C9BE0707B0C0D820D1E0E19 /* Pods-InstaISIL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaISIL.debug.xcconfig"; path = "Target Support Files/Pods-InstaISIL/Pods-InstaISIL.debug.xcconfig"; sourceTree = "<group>"; };
+		7CFF8742B6B78E209AFA4E10 /* Pods_InstaISIL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaISIL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D74135BCA4B02286E1AC1ED2 /* Pods-InstaISIL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaISIL.release.xcconfig"; path = "Target Support Files/Pods-InstaISIL/Pods-InstaISIL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3462CE180E25EDD9ECB41C06 /* Pods_InstaISIL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E74A0AE23B488C8D833D8DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CFF8742B6B78E209AFA4E10 /* Pods_InstaISIL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		485341002522212A00E47927 = {
 			isa = PBXGroup;
 			children = (
 				4853410B2522212A00E47927 /* InstaISIL */,
 				4853410A2522212A00E47927 /* Products */,
+				8F251010BB5304AB2CFDE147 /* Pods */,
+				3E74A0AE23B488C8D833D8DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +85,7 @@
 		4853410B2522212A00E47927 /* InstaISIL */ = {
 			isa = PBXGroup;
 			children = (
+				4E1932C5255DA083003E61F1 /* GoogleService-Info.plist */,
 				4853410C2522212A00E47927 /* AppDelegate.swift */,
 				4853410E2522212A00E47927 /* SceneDelegate.swift */,
 				485341102522212A00E47927 /* ViewController.swift */,
@@ -85,6 +103,15 @@
 			path = InstaISIL;
 			sourceTree = "<group>";
 		};
+		8F251010BB5304AB2CFDE147 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C9BE0707B0C0D820D1E0E19 /* Pods-InstaISIL.debug.xcconfig */,
+				D74135BCA4B02286E1AC1ED2 /* Pods-InstaISIL.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4853411D2522212C00E47927 /* Build configuration list for PBXNativeTarget "InstaISIL" */;
 			buildPhases = (
+				23AE5B08CBEADAA00CE4DB0C /* [CP] Check Pods Manifest.lock */,
 				485341052522212A00E47927 /* Sources */,
 				485341062522212A00E47927 /* Frameworks */,
 				485341072522212A00E47927 /* Resources */,
+				3222855390051E982414E057 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,12 +174,55 @@
 			files = (
 				485341192522212C00E47927 /* LaunchScreen.storyboard in Resources */,
 				48951F472534F7940029E5F3 /* Colors.xcassets in Resources */,
+				4E1932C6255DA083003E61F1 /* GoogleService-Info.plist in Resources */,
 				485341162522212C00E47927 /* Assets.xcassets in Resources */,
 				485341142522212A00E47927 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23AE5B08CBEADAA00CE4DB0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstaISIL-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3222855390051E982414E057 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaISIL/Pods-InstaISIL-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaISIL/Pods-InstaISIL-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaISIL/Pods-InstaISIL-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		485341052522212A00E47927 /* Sources */ = {
@@ -306,6 +378,7 @@
 		};
 		4853411E2522212C00E47927 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C9BE0707B0C0D820D1E0E19 /* Pods-InstaISIL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -323,6 +396,7 @@
 		};
 		4853411F2522212C00E47927 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D74135BCA4B02286E1AC1ED2 /* Pods-InstaISIL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

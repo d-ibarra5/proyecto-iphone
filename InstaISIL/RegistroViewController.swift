@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension RegistroViewController: UITextFieldDelegate {
     
@@ -37,6 +38,9 @@ extension RegistroViewController: DatePickerViewControllerDelegate {
         dateFormatter.dateFormat = "dd 'de' MMMM 'del' yyyy"
         dateFormatter.locale = Locale(identifier: "es_PE")
         self.txtFecha.text = dateFormatter.string(from: date)
+        
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        self.fechaFormateada = dateFormatter.string(from: date)
     }
 }
 
@@ -65,6 +69,8 @@ class RegistroViewController: UIViewController {
     @IBOutlet weak var txtCarrera: UITextField!
     @IBOutlet weak var txtFecha: UITextField!
     
+    
+    var fechaFormateada = ""
     var pickerActual: String = ""
     
     let sedes = ["Jesus Maria", "Miraflores", "La Molina", "San Isidro"]
@@ -144,7 +150,24 @@ class RegistroViewController: UIViewController {
             return
         }
         
-        //Si todo salio bien
+        //Si todo salio bien, registrar en Firebase
+        
+        let db = Firestore.firestore()
+        
+        db.collection("usuarios").document(usuario).setData([
+            "nombres": nombres,
+            "apellidos": apellidos,
+            "password": password,
+            "sede": sede,
+            "carrera": carrera,
+            "fecha": fechaFormateada
+        ]) { err in
+            if let err = err {
+                print("Error agregando usuario: \(err)")
+            } else {
+                print("Usuario fue agregado con ID: \(usuario)")
+            }
+        }
         
         MensajeAlerta(titulo: "Usuario registrado correctamente!", mensaje: "Bienvenido, \(usuario)! (\(nombres) \(apellidos)) \n" +
         "Carrera: \(carrera) \n" +
