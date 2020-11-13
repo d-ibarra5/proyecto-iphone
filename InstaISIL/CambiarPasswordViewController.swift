@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CambiarPasswordViewController: UIViewController {
     
@@ -51,8 +52,21 @@ class CambiarPasswordViewController: UIViewController {
             return
         }
         
-        MensajeAlerta(titulo: "Cambio correcto!", mensaje: "Su contraseña ha sido cambiada.")
+        let db = Firestore.firestore()
+                
+        //Si todo es correcto, actualizar password
         
+        let usuario = db.collection("usuarios").document(usuarioActual)
+
+        usuario.updateData([
+            "password": password1
+        ]) { err in
+            if let err = err {
+                self.MensajeAlerta(titulo: "Error", mensaje: "Error actualizando contraseña: \(err)" )
+            } else {
+                self.MensajeAlerta(titulo: "Cambio correcto!", mensaje: "Su contraseña ha sido cambiada.")
+            }
+        }       
     }
     
     @IBAction func clickBtnCloseKeyboard(_ sender: Any) {

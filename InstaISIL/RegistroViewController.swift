@@ -219,9 +219,7 @@ class RegistroViewController: UIViewController {
         else if let controller = segue.destination as? PickerViewController {
             controller.delegate = self
 
-            print("HECHO111")
             if pickerActual == "Sede" {
-                print("HECHO")
                 controller.arrayItems = sedes
             }
             else if pickerActual == "Carrera" {

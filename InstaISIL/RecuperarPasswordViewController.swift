@@ -14,6 +14,11 @@ class RecuperarPasswordViewController: UIViewController {
     @IBOutlet weak var txtUsuario: UITextField!
     @IBOutlet weak var constraintBottomScroll: NSLayoutConstraint!
       
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? CambiarPasswordViewController {
+            controller.usuarioActual = sender as? String ?? ""
+        }
+    }
      
     @IBAction func btnConfirmar(_ sender: Any) {
         
