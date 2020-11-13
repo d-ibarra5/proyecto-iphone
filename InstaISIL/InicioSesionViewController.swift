@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class InicioSesionViewController: UIViewController {
     
@@ -26,8 +27,32 @@ class InicioSesionViewController: UIViewController {
             return
         }
         
-        //Si todo salio bien
-        MensajeAlerta(titulo: "Bienvenido!", mensaje: "Bienvenido, \(usuario)!")
+        let db = Firestore.firestore()
+        
+        //Comprobar si usuario existe
+        let docRef = db.collection("usuarios").document(usuario)
+
+        docRef.getDocument { (document, error) in
+            //Si existe, comprobar si password es correcto
+            if let document = document, document.exists {
+                let data = document.data()
+                let realPassword = data?["password"] as? String ?? "0"
+                
+                if realPassword == password {
+                    self.performSegue(withIdentifier: "HomeViewController", sender: nil)
+                }
+                else{
+                    self.MensajeAlerta(titulo: "Contraseña incorrecta", mensaje: "La contraseña ingresada no es la correcta.")
+                    return
+                }
+
+            }
+            //Si usuario no existe, dar mensaje de error
+            else {
+                self.MensajeAlerta(titulo: "Usuario no existe", mensaje: "El usuario ingresado no existe, ingrese un usuario correcto.")
+                return
+            }
+        }
         
     }
     

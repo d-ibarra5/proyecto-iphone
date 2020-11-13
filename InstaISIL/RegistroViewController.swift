@@ -68,6 +68,8 @@ class RegistroViewController: UIViewController {
     @IBOutlet weak var txtSede: UITextField!
     @IBOutlet weak var txtCarrera: UITextField!
     @IBOutlet weak var txtFecha: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    
     
     
     var fechaFormateada = ""
@@ -103,6 +105,10 @@ class RegistroViewController: UIViewController {
             MensajeAlerta(titulo: "Apellido vacio", mensaje: "Debe insertar sus apellidos")
             return
         }
+        guard let email = txtEmail.text, !email.isEmpty else {
+            MensajeAlerta(titulo: "Email vacio", mensaje: "Debe insertar su email")
+            return
+        }
         guard let usuario = txtUsuario.text, !usuario.isEmpty else {
             MensajeAlerta(titulo: "Usuario vacio", mensaje: "Debe insertar su nombre de usuario")
             return
@@ -126,10 +132,10 @@ class RegistroViewController: UIViewController {
                 
         //Validar caracteres con regex
         let usuarioCorrecto = ValidarConRegex(patron: "^[0-9a-zA-Z\\_]{7,18}$", str: usuario)
-        let passwordCorrecto = ValidarConRegex(patron: "^[0-9a-zA-Z\\_]{7,18}$", str: password)
+        let passwordCorrecto = password.isValidPassword()
         let nombreIncorrecto = ValidarConRegex(patron: ".*[^A-Za-z ].*", str: nombres)
         let apellidoIncorrecto = ValidarConRegex(patron: ".*[^A-Za-z ].*", str: apellidos)
-        
+        let emailCorrecto = email.isValidEmail()
         
         if nombreIncorrecto == true {
             MensajeAlerta(titulo: "Nombres no validos", mensaje: "Por favor solo ingresar letras en el nombre")
@@ -138,6 +144,11 @@ class RegistroViewController: UIViewController {
         
         if apellidoIncorrecto == true {
             MensajeAlerta(titulo: "Apellidos no validos", mensaje: "Por favor solo ingresar letras en el apellido")
+            return
+        }
+        
+        if emailCorrecto == false {
+            MensajeAlerta(titulo: "Email no valido", mensaje: "Por favor ingrese un correo valido.")
             return
         }
         
@@ -154,26 +165,40 @@ class RegistroViewController: UIViewController {
         
         let db = Firestore.firestore()
         
-        db.collection("usuarios").document(usuario).setData([
-            "nombres": nombres,
-            "apellidos": apellidos,
-            "password": password,
-            "sede": sede,
-            "carrera": carrera,
-            "fecha": fechaFormateada
-        ]) { err in
-            if let err = err {
-                print("Error agregando usuario: \(err)")
-            } else {
-                print("Usuario fue agregado con ID: \(usuario)")
+        //Si el usuario ya existe, retornar
+        let docRef = db.collection("usuarios").document(usuario)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                self.MensajeAlerta(titulo: "Usuario ya existe", mensaje: "El usuario ingresado ya existe, intente utilizar otro nombre de usuario.")
+                return
+            }
+            else{
+                //Registrar datos
+                db.collection("usuarios").document(usuario).setData([
+                    "nombres": nombres,
+                    "apellidos": apellidos,
+                    "password": password,
+                    "sede": sede,
+                    "carrera": carrera,
+                    "fecha": self.fechaFormateada,
+                    "email": email
+                ]) { err in
+                    if let err = err {
+                        print("Error agregando usuario: \(err)")
+                    } else {
+                        print("Usuario fue agregado con ID: \(usuario)")
+                    }
+                }
+                /*
+                MensajeAlerta(titulo: "Usuario registrado correctamente!", mensaje: "Bienvenido, \(usuario)! (\(nombres) \(apellidos)) \n" +
+                "Carrera: \(carrera) \n" +
+                "Sede: \(sede) \n" +
+                    "Fecha de nacimiento: \(fecha)")*/
+                
+                self.performSegue(withIdentifier: "HomeViewController", sender: nil)
             }
         }
-        
-        MensajeAlerta(titulo: "Usuario registrado correctamente!", mensaje: "Bienvenido, \(usuario)! (\(nombres) \(apellidos)) \n" +
-        "Carrera: \(carrera) \n" +
-        "Sede: \(sede) \n" +
-            "Fecha de nacimiento: \(fecha)")
-                
     }
     
     
