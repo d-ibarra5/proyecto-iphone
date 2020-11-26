@@ -21,6 +21,10 @@
 		48951F472534F7940029E5F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48951F462534F7940029E5F3 /* Colors.xcassets */; };
 		48951F492534F9240029E5F3 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48951F482534F9240029E5F3 /* PickerViewController.swift */; };
 		4E1932C6255DA083003E61F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E1932C5255DA083003E61F1 /* GoogleService-Info.plist */; };
+		4E3B281525702AED006F833D /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B281425702AED006F833D /* TimelineViewController.swift */; };
+		4E3B281825702B59006F833D /* PostBE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B281725702B59006F833D /* PostBE.swift */; };
+		4E3B281B25703220006F833D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B281A25703220006F833D /* PostTableViewCell.swift */; };
+		4E3B281E257033E0006F833D /* ExtensionesFecha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B281D257033E0006F833D /* ExtensionesFecha.swift */; };
 		4E53BC60255EE8BA00D11D27 /* StringEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BC5F255EE8BA00D11D27 /* StringEmail.swift */; };
 		4E53BC63255EEDF700D11D27 /* CambiarPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BC62255EEDF700D11D27 /* CambiarPasswordViewController.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +45,10 @@
 		48951F462534F7940029E5F3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		48951F482534F9240029E5F3 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		4E1932C5255DA083003E61F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E3B281425702AED006F833D /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		4E3B281725702B59006F833D /* PostBE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBE.swift; sourceTree = "<group>"; };
+		4E3B281A25703220006F833D /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		4E3B281D257033E0006F833D /* ExtensionesFecha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionesFecha.swift; sourceTree = "<group>"; };
 		4E53BC5F255EE8BA00D11D27 /* StringEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEmail.swift; sourceTree = "<group>"; };
 		4E53BC62255EEDF700D11D27 /* CambiarPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambiarPasswordViewController.swift; sourceTree = "<group>"; };
 		7C9BE0707B0C0D820D1E0E19 /* Pods-InstaISIL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaISIL.debug.xcconfig"; path = "Target Support Files/Pods-InstaISIL/Pods-InstaISIL.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +113,10 @@
 				48951F482534F9240029E5F3 /* PickerViewController.swift */,
 				4E53BC5F255EE8BA00D11D27 /* StringEmail.swift */,
 				4E53BC62255EEDF700D11D27 /* CambiarPasswordViewController.swift */,
+				4E3B281425702AED006F833D /* TimelineViewController.swift */,
+				4E3B281725702B59006F833D /* PostBE.swift */,
+				4E3B281A25703220006F833D /* PostTableViewCell.swift */,
+				4E3B281D257033E0006F833D /* ExtensionesFecha.swift */,
 			);
 			path = InstaISIL;
 			sourceTree = "<group>";
@@ -236,12 +248,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				487E527D2530DDE000AF33AC /* InicioSesionViewController.swift in Sources */,
+				4E3B281525702AED006F833D /* TimelineViewController.swift in Sources */,
+				4E3B281B25703220006F833D /* PostTableViewCell.swift in Sources */,
+				4E3B281E257033E0006F833D /* ExtensionesFecha.swift in Sources */,
 				487E52812530DE4D00AF33AC /* RecuperarPasswordViewController.swift in Sources */,
 				4E53BC60255EE8BA00D11D27 /* StringEmail.swift in Sources */,
 				4E53BC63255EEDF700D11D27 /* CambiarPasswordViewController.swift in Sources */,
 				48951F492534F9240029E5F3 /* PickerViewController.swift in Sources */,
 				48951F452534EC9E0029E5F3 /* DatePickerViewController.swift in Sources */,
 				485341112522212A00E47927 /* ViewController.swift in Sources */,
+				4E3B281825702B59006F833D /* PostBE.swift in Sources */,
 				483CC17C252EA17F001F24E0 /* RegistroViewController.swift in Sources */,
 				4853410D2522212A00E47927 /* AppDelegate.swift in Sources */,
 				4853410F2522212A00E47927 /* SceneDelegate.swift in Sources */,
