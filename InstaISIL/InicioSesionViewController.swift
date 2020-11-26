@@ -39,6 +39,7 @@ class InicioSesionViewController: UIViewController {
                 let realPassword = data?["password"] as? String ?? "0"
                 
                 if realPassword == password {
+                    UserDefaults.standard.set(usuario, forKey: "Usuario")
                     self.performSegue(withIdentifier: "HomeViewController", sender: nil)
                 }
                 else{

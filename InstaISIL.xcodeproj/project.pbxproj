@@ -21,6 +21,9 @@
 		48951F472534F7940029E5F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48951F462534F7940029E5F3 /* Colors.xcassets */; };
 		48951F492534F9240029E5F3 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48951F482534F9240029E5F3 /* PickerViewController.swift */; };
 		4E1932C6255DA083003E61F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E1932C5255DA083003E61F1 /* GoogleService-Info.plist */; };
+		4E1D4C7725705D3E00CBC613 /* ExtensionesImagen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D4C7625705D3E00CBC613 /* ExtensionesImagen.swift */; };
+		4E1D4C8825706BE600CBC613 /* CrearPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D4C8725706BE600CBC613 /* CrearPostViewController.swift */; };
+		4E1D4C8B25706D8900CBC613 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D4C8A25706D8900CBC613 /* AlertManager.swift */; };
 		4E3B281525702AED006F833D /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B281425702AED006F833D /* TimelineViewController.swift */; };
 		4E3B281825702B59006F833D /* PostBE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B281725702B59006F833D /* PostBE.swift */; };
 		4E3B281B25703220006F833D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B281A25703220006F833D /* PostTableViewCell.swift */; };
@@ -45,6 +48,9 @@
 		48951F462534F7940029E5F3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		48951F482534F9240029E5F3 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		4E1932C5255DA083003E61F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E1D4C7625705D3E00CBC613 /* ExtensionesImagen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionesImagen.swift; sourceTree = "<group>"; };
+		4E1D4C8725706BE600CBC613 /* CrearPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearPostViewController.swift; sourceTree = "<group>"; };
+		4E1D4C8A25706D8900CBC613 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		4E3B281425702AED006F833D /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		4E3B281725702B59006F833D /* PostBE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBE.swift; sourceTree = "<group>"; };
 		4E3B281A25703220006F833D /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 				4E3B281725702B59006F833D /* PostBE.swift */,
 				4E3B281A25703220006F833D /* PostTableViewCell.swift */,
 				4E3B281D257033E0006F833D /* ExtensionesFecha.swift */,
+				4E1D4C7625705D3E00CBC613 /* ExtensionesImagen.swift */,
+				4E1D4C8725706BE600CBC613 /* CrearPostViewController.swift */,
+				4E1D4C8A25706D8900CBC613 /* AlertManager.swift */,
 			);
 			path = InstaISIL;
 			sourceTree = "<group>";
@@ -247,6 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E1D4C7725705D3E00CBC613 /* ExtensionesImagen.swift in Sources */,
+				4E1D4C8B25706D8900CBC613 /* AlertManager.swift in Sources */,
 				487E527D2530DDE000AF33AC /* InicioSesionViewController.swift in Sources */,
 				4E3B281525702AED006F833D /* TimelineViewController.swift in Sources */,
 				4E3B281B25703220006F833D /* PostTableViewCell.swift in Sources */,
@@ -256,6 +267,7 @@
 				4E53BC63255EEDF700D11D27 /* CambiarPasswordViewController.swift in Sources */,
 				48951F492534F9240029E5F3 /* PickerViewController.swift in Sources */,
 				48951F452534EC9E0029E5F3 /* DatePickerViewController.swift in Sources */,
+				4E1D4C8825706BE600CBC613 /* CrearPostViewController.swift in Sources */,
 				485341112522212A00E47927 /* ViewController.swift in Sources */,
 				4E3B281825702B59006F833D /* PostBE.swift in Sources */,
 				483CC17C252EA17F001F24E0 /* RegistroViewController.swift in Sources */,

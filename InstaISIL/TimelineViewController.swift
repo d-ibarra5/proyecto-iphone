@@ -36,6 +36,11 @@ class TimelineViewController: UIViewController {
                     self.arrayPosts.append(post)
                     print("\(document.documentID) => \(document.data())")
                 }
+                
+                //Ordenar posts (mas reciente primero)
+                self.arrayPosts = self.arrayPosts.sorted(by: { $0.fecha.compare($1.fecha) == .orderedDescending })
+                
+                //Recargar tabla
                 self.tabla.reloadData()
             }
         }
