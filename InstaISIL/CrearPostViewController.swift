@@ -16,7 +16,7 @@ class CrearPostViewController: UIViewController {
     @IBOutlet weak var descripcion : UITextView!
         
     @IBAction func tapToCloseKeyboard(_ sender: Any) {
-            self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     @IBAction func clickGuardar(_ sender: Any) {

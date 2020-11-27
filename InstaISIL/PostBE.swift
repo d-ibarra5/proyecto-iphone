@@ -16,12 +16,15 @@ class PostBE {
     var imgURL          : String
     var descripcion     : String
     
-    init(id: String, usuario: String, fecha: Date, imgURL: String, descripcion: String) {
+    var likes = [String]()
+    
+    init(id: String, usuario: String, fecha: Date, imgURL: String, descripcion: String, likes: [String]) {
         self.id = id
         self.usuario = usuario
         self.imgURL = imgURL
         self.descripcion = descripcion
-        self.fecha = fecha 
+        self.fecha = fecha
+        self.likes = likes
     }
     
 }

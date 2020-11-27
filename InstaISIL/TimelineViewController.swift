@@ -41,9 +41,17 @@ class TimelineViewController: UIViewController {
                     let img = data["imgURL"] as? String ?? ""
                     let dsc = data["descripcion"] as? String ?? ""
                     let ts = data["fecha"] as! Timestamp
+                    
+                    //Conseguir likes
+                    var lks = [String]()
+                    
+                    if let likes = data["likes"] {
+                        lks = data["likes"] as? [String] ?? [String]()
+                    }
+                    
                     let fch = ts.dateValue()
                     
-                    let post = PostBE(id: document.documentID, usuario: usu, fecha: fch, imgURL: img, descripcion: dsc)
+                    let post = PostBE(id: document.documentID, usuario: usu, fecha: fch, imgURL: img, descripcion: dsc, likes: lks)
                     self.arrayPosts.append(post)
                     print("\(document.documentID) => \(document.data())")
                 }

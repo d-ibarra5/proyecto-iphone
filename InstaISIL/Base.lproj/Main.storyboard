@@ -434,13 +434,6 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <state key="normal" title="0 likes"/>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="Wxw-Dp-h5j">
-                                                    <rect key="frame" x="18" y="464.33333333333331" width="25" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="PyN-xm-L7Z"/>
-                                                        <constraint firstAttribute="height" constant="25" id="zNc-df-GwF"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment" translatesAutoresizingMaskIntoConstraints="NO" id="KvF-qW-wpd">
                                                     <rect key="frame" x="385" y="464.33333333333331" width="25" height="25"/>
                                                     <constraints>
@@ -451,39 +444,56 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                                     <rect key="frame" x="293" y="464.33333333333331" width="83" height="25"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <state key="normal" title="0 comentarios"/>
+                                                    <connections>
+                                                        <action selector="verComentarios:" destination="B2N-bA-szE" eventType="touchUpInside" id="U6d-dy-zeN"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPq-sg-lz4">
+                                                    <rect key="frame" x="18" y="464.33333333333331" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="Jkb-KS-7d5"/>
+                                                        <constraint firstAttribute="width" constant="25" id="mmA-TM-ewQ"/>
+                                                    </constraints>
+                                                    <state key="normal" image="like1"/>
+                                                    <connections>
+                                                        <action selector="likePost:" destination="B2N-bA-szE" eventType="touchUpInside" id="Wdy-dE-g4e"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KvF-qW-wpd" firstAttribute="trailing" secondItem="6ui-2Q-kAa" secondAttribute="trailing" id="1VD-rf-rXi"/>
-                                                <constraint firstItem="cWT-im-Gsc" firstAttribute="top" secondItem="Wxw-Dp-h5j" secondAttribute="top" id="3PW-OK-uck"/>
+                                                <constraint firstItem="cWT-im-Gsc" firstAttribute="leading" secondItem="hPq-sg-lz4" secondAttribute="trailing" constant="10" id="32V-pe-HEj"/>
                                                 <constraint firstItem="6ui-2Q-kAa" firstAttribute="leading" secondItem="ZEI-Jr-7iy" secondAttribute="leading" id="5RL-HX-j9l"/>
                                                 <constraint firstItem="g1U-Fg-VrK" firstAttribute="top" secondItem="ZEI-Jr-7iy" secondAttribute="top" id="7Sb-Ik-gOD"/>
                                                 <constraint firstItem="RBI-3i-4iP" firstAttribute="top" secondItem="ZEI-Jr-7iy" secondAttribute="bottom" constant="20" id="8Zw-0L-VRe"/>
-                                                <constraint firstItem="Wxw-Dp-h5j" firstAttribute="leading" secondItem="6ui-2Q-kAa" secondAttribute="leading" id="ATW-EJ-sjL"/>
+                                                <constraint firstItem="cWT-im-Gsc" firstAttribute="bottom" secondItem="hPq-sg-lz4" secondAttribute="bottom" id="9t4-l4-8xL"/>
                                                 <constraint firstItem="KvF-qW-wpd" firstAttribute="leading" secondItem="Ngt-h4-nk3" secondAttribute="trailing" constant="9" id="CNF-K6-dho"/>
+                                                <constraint firstItem="hPq-sg-lz4" firstAttribute="leading" secondItem="6ui-2Q-kAa" secondAttribute="leading" id="CcN-io-51W"/>
                                                 <constraint firstItem="emk-8s-NQt" firstAttribute="top" secondItem="RBI-3i-4iP" secondAttribute="bottom" constant="15" id="Dzy-PS-VUL"/>
                                                 <constraint firstItem="ZEI-Jr-7iy" firstAttribute="leading" secondItem="GkI-Wg-jwH" secondAttribute="leading" constant="18" id="G0H-AR-gmK"/>
-                                                <constraint firstItem="KvF-qW-wpd" firstAttribute="top" secondItem="Wxw-Dp-h5j" secondAttribute="top" id="KB1-p8-4sy"/>
                                                 <constraint firstItem="1Up-sU-kbf" firstAttribute="top" secondItem="ZEI-Jr-7iy" secondAttribute="top" id="LEs-ra-zgp"/>
+                                                <constraint firstItem="Ngt-h4-nk3" firstAttribute="bottom" secondItem="hPq-sg-lz4" secondAttribute="bottom" id="MRm-y8-7yF"/>
                                                 <constraint firstItem="6ui-2Q-kAa" firstAttribute="top" secondItem="emk-8s-NQt" secondAttribute="bottom" constant="18" id="MsI-Qa-8hS"/>
                                                 <constraint firstAttribute="bottom" secondItem="KvF-qW-wpd" secondAttribute="bottom" constant="21.329999999999998" id="Nao-On-4WW"/>
-                                                <constraint firstItem="KvF-qW-wpd" firstAttribute="bottom" secondItem="Wxw-Dp-h5j" secondAttribute="bottom" id="Nuu-tc-xLD"/>
                                                 <constraint firstItem="1Up-sU-kbf" firstAttribute="leading" secondItem="ZEI-Jr-7iy" secondAttribute="trailing" constant="16" id="PLi-2j-8Dw"/>
                                                 <constraint firstItem="emk-8s-NQt" firstAttribute="leading" secondItem="RBI-3i-4iP" secondAttribute="leading" id="QaW-Dk-P5A"/>
+                                                <constraint firstItem="hPq-sg-lz4" firstAttribute="top" secondItem="6ui-2Q-kAa" secondAttribute="bottom" constant="16" id="RYe-jm-WGi"/>
+                                                <constraint firstItem="KvF-qW-wpd" firstAttribute="bottom" secondItem="hPq-sg-lz4" secondAttribute="bottom" id="Sm6-lZ-DSd"/>
                                                 <constraint firstAttribute="trailing" secondItem="g1U-Fg-VrK" secondAttribute="trailing" constant="18" id="Yc5-O3-ab0"/>
                                                 <constraint firstItem="RBI-3i-4iP" firstAttribute="trailing" secondItem="g1U-Fg-VrK" secondAttribute="trailing" id="ZvB-Zw-psF"/>
                                                 <constraint firstItem="emk-8s-NQt" firstAttribute="trailing" secondItem="RBI-3i-4iP" secondAttribute="trailing" id="afz-fj-hRi"/>
-                                                <constraint firstItem="Ngt-h4-nk3" firstAttribute="bottom" secondItem="Wxw-Dp-h5j" secondAttribute="bottom" id="bJc-PK-bIZ"/>
+                                                <constraint firstItem="KvF-qW-wpd" firstAttribute="top" secondItem="hPq-sg-lz4" secondAttribute="top" id="b5E-mX-x5A"/>
                                                 <constraint firstItem="RBI-3i-4iP" firstAttribute="leading" secondItem="ZEI-Jr-7iy" secondAttribute="leading" id="fH1-74-ndf"/>
-                                                <constraint firstItem="cWT-im-Gsc" firstAttribute="bottom" secondItem="Wxw-Dp-h5j" secondAttribute="bottom" id="fgA-7A-t56"/>
-                                                <constraint firstItem="cWT-im-Gsc" firstAttribute="leading" secondItem="Wxw-Dp-h5j" secondAttribute="trailing" constant="10" id="juJ-Jv-ky1"/>
+                                                <constraint firstItem="Ngt-h4-nk3" firstAttribute="top" secondItem="hPq-sg-lz4" secondAttribute="top" id="ks9-hH-xbA"/>
+                                                <constraint firstItem="cWT-im-Gsc" firstAttribute="top" secondItem="hPq-sg-lz4" secondAttribute="top" id="njr-p4-TJB"/>
                                                 <constraint firstItem="6ui-2Q-kAa" firstAttribute="trailing" secondItem="emk-8s-NQt" secondAttribute="trailing" id="o40-kD-tp7"/>
-                                                <constraint firstItem="Ngt-h4-nk3" firstAttribute="top" secondItem="Wxw-Dp-h5j" secondAttribute="top" id="po8-8L-qMS"/>
-                                                <constraint firstItem="Wxw-Dp-h5j" firstAttribute="top" secondItem="6ui-2Q-kAa" secondAttribute="bottom" constant="16" id="rdW-Ht-D1f"/>
                                                 <constraint firstItem="ZEI-Jr-7iy" firstAttribute="top" secondItem="GkI-Wg-jwH" secondAttribute="top" constant="18" id="xeC-mR-rC5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnComentarios" destination="Ngt-h4-nk3" id="EGM-8k-Uja"/>
+                                            <outlet property="btnLike" destination="hPq-sg-lz4" id="6K3-H6-hjx"/>
+                                            <outlet property="btnVerLikes" destination="cWT-im-Gsc" id="qz1-8G-MkB"/>
                                             <outlet property="descripcion" destination="RBI-3i-4iP" id="sJu-TH-OWt"/>
                                             <outlet property="fecha" destination="emk-8s-NQt" id="N3W-sv-ds1"/>
                                             <outlet property="fotoPerfil" destination="ZEI-Jr-7iy" id="5ph-wP-s6w"/>
@@ -617,7 +627,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                             <constraint firstItem="pV2-Bo-p33" firstAttribute="top" secondItem="CJJ-jT-8t2" secondAttribute="top" constant="15" id="sFa-LD-MiZ"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="aBw-jD-seo" appends="YES" id="fzG-1j-7lC"/>
+                            <outletCollection property="gestureRecognizers" destination="xe5-iq-7Us" appends="YES" id="729-HZ-nzt"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="IpQ-qg-3eH"/>
@@ -627,9 +637,9 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmK-4p-dWz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="aBw-jD-seo">
+                <tapGestureRecognizer id="xe5-iq-7Us">
                     <connections>
-                        <action selector="tapToCloseKeyboard:" destination="Eb5-vx-bV1" id="ccY-la-QK8"/>
+                        <action selector="tapToCloseKeyboard:" destination="Eb5-vx-bV1" id="0Fg-T4-tuh"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -972,8 +982,8 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
         <segue reference="ex8-gn-d1p"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="comment" width="200" height="200"/>
-        <image name="like" width="256" height="256"/>
+        <image name="comment" width="100" height="100"/>
+        <image name="like1" width="100" height="100"/>
         <image name="placeholder" width="1920" height="1280"/>
         <namedColor name="Black50">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
