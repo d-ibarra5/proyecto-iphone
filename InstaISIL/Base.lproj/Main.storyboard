@@ -557,7 +557,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDj-T7-SeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295.7943925233644" y="-468.46652267818575"/>
+            <point key="canvasLocation" x="3280" y="-468"/>
         </scene>
         <!--Crear Post View Controller-->
         <scene sceneID="pKL-6v-50H">
@@ -594,10 +594,14 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Realizar publicacion"/>
+                                <connections>
+                                    <action selector="clickGuardar:" destination="Eb5-vx-bV1" eventType="touchUpInside" id="Hjz-iS-8m8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CJJ-jT-8t2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="x7E-Fw-fdV" firstAttribute="trailing" secondItem="ERm-bp-ac5" secondAttribute="trailing" id="ClX-g6-BJS"/>
                             <constraint firstItem="QTr-Kl-6ug" firstAttribute="leading" secondItem="x7E-Fw-fdV" secondAttribute="leading" id="JZO-iL-0rK"/>
@@ -612,12 +616,24 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                             <constraint firstItem="x7E-Fw-fdV" firstAttribute="leading" secondItem="ERm-bp-ac5" secondAttribute="leading" id="rGy-Uw-HGB"/>
                             <constraint firstItem="pV2-Bo-p33" firstAttribute="top" secondItem="CJJ-jT-8t2" secondAttribute="top" constant="15" id="sFa-LD-MiZ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aBw-jD-seo" appends="YES" id="fzG-1j-7lC"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="IpQ-qg-3eH"/>
+                    <connections>
+                        <outlet property="descripcion" destination="ERm-bp-ac5" id="MdE-iz-Xb4"/>
+                        <outlet property="imgURL" destination="x7E-Fw-fdV" id="eJw-tY-3l3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmK-4p-dWz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aBw-jD-seo">
+                    <connections>
+                        <action selector="tapToCloseKeyboard:" destination="Eb5-vx-bV1" id="ccY-la-QK8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4076.6355140186915" y="-468.46652267818575"/>
+            <point key="canvasLocation" x="4200" y="-468"/>
         </scene>
         <!--Registro View Controller-->
         <scene sceneID="tne-QT-ifu">

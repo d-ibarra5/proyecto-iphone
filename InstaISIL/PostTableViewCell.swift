@@ -31,6 +31,7 @@ class PostTableViewCell : UITableViewCell {
         
         //Si hay imagen, descargarla
         if objPost.imgURL != "" {
+            imageHeight.constant = 200
             let placeholderImage = UIImage(named: "placeholder")
             self.imagen.downloadImageInURLString(self.objPost.imgURL, placeHolderImage: placeholderImage) { (image, urlString) in
                 if self.objPost.imgURL == urlString {

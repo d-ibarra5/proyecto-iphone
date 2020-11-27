@@ -190,13 +190,14 @@ class RegistroViewController: UIViewController {
                         print("Usuario fue agregado con ID: \(usuario)")
                     }
                 }
-                /*
-                MensajeAlerta(titulo: "Usuario registrado correctamente!", mensaje: "Bienvenido, \(usuario)! (\(nombres) \(apellidos)) \n" +
-                "Carrera: \(carrera) \n" +
-                "Sede: \(sede) \n" +
-                    "Fecha de nacimiento: \(fecha)")*/
                 
-                self.performSegue(withIdentifier: "HomeViewController", sender: nil)
+                //Guardar usuario actual
+                UserDefaults.standard.set(usuario, forKey: "Usuario")
+                
+                //Enviar a home
+                self.showAlertWithTitle("Registro exitoso", message: "Bienvenido, \(usuario)!", acceptButton: "Aceptar") {                    
+                    self.performSegue(withIdentifier: "HomeViewController", sender: nil)
+                }
             }
         }
     }

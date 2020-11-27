@@ -38,10 +38,16 @@ class InicioSesionViewController: UIViewController {
                 let data = document.data()
                 let realPassword = data?["password"] as? String ?? "0"
                 
+                //Enviar a home si contrasena es correcta
                 if realPassword == password {
                     UserDefaults.standard.set(usuario, forKey: "Usuario")
-                    self.performSegue(withIdentifier: "HomeViewController", sender: nil)
+                    
+                    self.showAlertWithTitle("Correcto", message: "Bienvenido de nuevo, \(usuario)!", acceptButton: "Aceptar") {
+                        self.performSegue(withIdentifier: "HomeViewController", sender: nil)
+                    }
                 }
+                
+                //Mostrar error si contrasena es incorrecta
                 else{
                     self.MensajeAlerta(titulo: "Contraseña incorrecta", mensaje: "La contraseña ingresada no es la correcta.")
                     return

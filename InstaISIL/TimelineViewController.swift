@@ -17,7 +17,17 @@ class TimelineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        cargarPosts()
+    }
+    
+    func cargarPosts(){
+        //Limpiar array
+        arrayPosts = [PostBE]()
+        
         let db = Firestore.firestore()
                 
         //Conseguir todos los posts
@@ -28,9 +38,10 @@ class TimelineViewController: UIViewController {
                 for document in querySnapshot!.documents {
                     let data = document.data()
                     let usu = data["usuario"] as? String ?? ""
-                    let fch = data["fecha"] as? String ?? ""
                     let img = data["imgURL"] as? String ?? ""
                     let dsc = data["descripcion"] as? String ?? ""
+                    let ts = data["fecha"] as! Timestamp
+                    let fch = ts.dateValue()
                     
                     let post = PostBE(id: document.documentID, usuario: usu, fecha: fch, imgURL: img, descripcion: dsc)
                     self.arrayPosts.append(post)
@@ -44,6 +55,7 @@ class TimelineViewController: UIViewController {
                 self.tabla.reloadData()
             }
         }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
