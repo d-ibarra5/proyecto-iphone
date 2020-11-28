@@ -20,6 +20,8 @@
 		48951F452534EC9E0029E5F3 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */; };
 		48951F472534F7940029E5F3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48951F462534F7940029E5F3 /* Colors.xcassets */; };
 		48951F492534F9240029E5F3 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48951F482534F9240029E5F3 /* PickerViewController.swift */; };
+		4E07B45C2572BCA1006F68F9 /* ComentariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07B45B2572BCA1006F68F9 /* ComentariosViewController.swift */; };
+		4E07B45F2572BFB4006F68F9 /* ComentarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07B45E2572BFB4006F68F9 /* ComentarioTableViewCell.swift */; };
 		4E1932C6255DA083003E61F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E1932C5255DA083003E61F1 /* GoogleService-Info.plist */; };
 		4E1D4C7725705D3E00CBC613 /* ExtensionesImagen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D4C7625705D3E00CBC613 /* ExtensionesImagen.swift */; };
 		4E1D4C8825706BE600CBC613 /* CrearPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D4C8725706BE600CBC613 /* CrearPostViewController.swift */; };
@@ -47,6 +49,8 @@
 		48951F442534EC9E0029E5F3 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		48951F462534F7940029E5F3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		48951F482534F9240029E5F3 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		4E07B45B2572BCA1006F68F9 /* ComentariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentariosViewController.swift; sourceTree = "<group>"; };
+		4E07B45E2572BFB4006F68F9 /* ComentarioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentarioTableViewCell.swift; sourceTree = "<group>"; };
 		4E1932C5255DA083003E61F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E1D4C7625705D3E00CBC613 /* ExtensionesImagen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionesImagen.swift; sourceTree = "<group>"; };
 		4E1D4C8725706BE600CBC613 /* CrearPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearPostViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				4E1D4C7625705D3E00CBC613 /* ExtensionesImagen.swift */,
 				4E1D4C8725706BE600CBC613 /* CrearPostViewController.swift */,
 				4E1D4C8A25706D8900CBC613 /* AlertManager.swift */,
+				4E07B45B2572BCA1006F68F9 /* ComentariosViewController.swift */,
+				4E07B45E2572BFB4006F68F9 /* ComentarioTableViewCell.swift */,
 			);
 			path = InstaISIL;
 			sourceTree = "<group>";
@@ -263,9 +269,11 @@
 				4E3B281B25703220006F833D /* PostTableViewCell.swift in Sources */,
 				4E3B281E257033E0006F833D /* ExtensionesFecha.swift in Sources */,
 				487E52812530DE4D00AF33AC /* RecuperarPasswordViewController.swift in Sources */,
+				4E07B45C2572BCA1006F68F9 /* ComentariosViewController.swift in Sources */,
 				4E53BC60255EE8BA00D11D27 /* StringEmail.swift in Sources */,
 				4E53BC63255EEDF700D11D27 /* CambiarPasswordViewController.swift in Sources */,
 				48951F492534F9240029E5F3 /* PickerViewController.swift in Sources */,
+				4E07B45F2572BFB4006F68F9 /* ComentarioTableViewCell.swift in Sources */,
 				48951F452534EC9E0029E5F3 /* DatePickerViewController.swift in Sources */,
 				4E1D4C8825706BE600CBC613 /* CrearPostViewController.swift in Sources */,
 				485341112522212A00E47927 /* ViewController.swift in Sources */,

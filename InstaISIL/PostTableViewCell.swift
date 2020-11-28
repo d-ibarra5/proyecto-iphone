@@ -9,6 +9,10 @@
 import UIKit
 import Firebase
 
+protocol PostTableViewCellDelegate {
+    func postTableViewCell(_ cell: PostTableViewCell)
+}
+
 class PostTableViewCell : UITableViewCell {
     
     @IBOutlet weak private var username             : UILabel!
@@ -21,7 +25,13 @@ class PostTableViewCell : UITableViewCell {
     @IBOutlet weak private var btnLike              : UIButton!
     @IBOutlet weak private var btnComentarios       : UIButton!
     @IBOutlet weak private var btnVerLikes          : UIButton!
-        
+    
+    var delegate: PostTableViewCellDelegate?
+    
+    @IBAction func verComentarios(_ sender: Any) {
+        self.delegate?.postTableViewCell(self)
+    }
+    
     @IBAction func likePost(_ sender: Any) {
         
         let user = UserDefaults.standard.string(forKey: "Usuario") as? String ?? ""
@@ -52,9 +62,6 @@ class PostTableViewCell : UITableViewCell {
         actualizarLikes()
     }
     
-    @IBAction func verComentarios(_ sender: Any) {
-        
-    }
     
     public var objPost: PostBE!{
         didSet{
@@ -62,10 +69,21 @@ class PostTableViewCell : UITableViewCell {
         }
     }
     
+    
     private func actualizar() {            
         self.username.text       = self.objPost.usuario
         self.descripcion.text    = self.objPost.descripcion
         self.fecha.text = self.objPost.fecha.formatearFecha()
+        
+        //Setear texto de comentarios
+        var commentText = "\(objPost.comentarios.count) comentarios"
+        
+        if objPost.comentarios.count == 1 {
+            commentText = "\(objPost.comentarios.count) comentario"
+        }
+        
+        //Setear cantidad de comentarios
+        btnComentarios.setTitle(commentText, for: .normal)
         
         //Si hay imagen, descargarla
         if objPost.imgURL != "" {
@@ -106,7 +124,6 @@ class PostTableViewCell : UITableViewCell {
             likeText = "\(objPost.likes.count) like"
         }
         
-        //Setear cantidad de likes y comentarios
         btnVerLikes.setTitle(likeText, for: .normal)
     }
     

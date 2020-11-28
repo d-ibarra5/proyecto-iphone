@@ -41,19 +41,38 @@ class TimelineViewController: UIViewController {
                     let img = data["imgURL"] as? String ?? ""
                     let dsc = data["descripcion"] as? String ?? ""
                     let ts = data["fecha"] as! Timestamp
+                    let fch = ts.dateValue()
                     
                     //Conseguir likes
                     var lks = [String]()
                     
                     if let likes = data["likes"] {
-                        lks = data["likes"] as? [String] ?? [String]()
+                        lks = likes as? [String] ?? [String]()
                     }
                     
-                    let fch = ts.dateValue()
+                    //Conseguir comentarios
+                    var comments = [ComentarioBE]()
+                    if let coms = data["comentarios"]{
+                        let commentArray = data["comentarios"]! as! [Any]
+                        
+                        for comment in commentArray {
+                            let value = comment as! [String: Any]
+                            
+                            let tsComment = value["fecha"] as! Timestamp
+                            let fechaComment = tsComment.dateValue()
+                            let usuComment = value["usuario"] as? String ?? ""
+                            let contComment = value["contenido"] as? String ?? ""
+                            
+                            let comentario = ComentarioBE(usuario: usuComment, fecha: fechaComment, contenido: contComment)
+                            comments.append(comentario)
+                            print(comentario)
+                        }
+                    }                    
                     
-                    let post = PostBE(id: document.documentID, usuario: usu, fecha: fch, imgURL: img, descripcion: dsc, likes: lks)
+                    //Guardar post
+                    let post = PostBE(id: document.documentID, usuario: usu, fecha: fch, imgURL: img, descripcion: dsc, likes: lks, comentarios: comments)
                     self.arrayPosts.append(post)
-                    print("\(document.documentID) => \(document.data())")
+                    //print("\(document.documentID) => \(document.data())")
                 }
                 
                 //Ordenar posts (mas reciente primero)
@@ -67,7 +86,15 @@ class TimelineViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let controller = segue.destination as? ComentariosViewController {
+            controller.objPost = sender as? PostBE
+        }
+    }
+}
+
+extension TimelineViewController: PostTableViewCellDelegate {
+    func postTableViewCell(_ cell: PostTableViewCell) {
+        self.performSegue(withIdentifier: "ComentariosViewController", sender: cell.objPost)
     }
 }
 
@@ -84,6 +111,7 @@ extension TimelineViewController: UITableViewDataSource {
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         cell.objPost = self.arrayPosts[indexPath.row]
+        cell.delegate = self
         return cell
     }
 
