@@ -12,11 +12,14 @@ import Firebase
 class TimelineViewController: UIViewController {
     
     @IBOutlet weak var tabla: UITableView!
+    @IBOutlet weak var btnMiPerfil: UIBarButtonItem!
     
     var arrayPosts = [PostBE]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnMiPerfil.target = self
+        btnMiPerfil.action = #selector(btnAbrirPerfil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,7 +68,6 @@ class TimelineViewController: UIViewController {
                             
                             let comentario = ComentarioBE(usuario: usuComment, fecha: fechaComment, contenido: contComment)
                             comments.append(comentario)
-                            print(comentario)
                         }
                     }                    
                     
@@ -85,14 +87,27 @@ class TimelineViewController: UIViewController {
         
     }
     
+    @IBAction func btnAbrirPerfil(_ sender: UIButton) {
+        let user = UserDefaults.standard.string(forKey: "Usuario") as? String ?? ""
+        self.performSegue(withIdentifier: "PerfilViewController", sender: user)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? ComentariosViewController {
             controller.objPost = sender as? PostBE
+        }
+        if let controller = segue.destination as? PerfilViewController {
+            controller.nombreUsuario = sender as? String
         }
     }
 }
 
 extension TimelineViewController: PostTableViewCellDelegate {
+    func postTableVerPerfil(_ usuario: String) {
+        self.performSegue(withIdentifier: "PerfilViewController", sender: usuario)
+    }
+    
     func postTableViewCell(_ cell: PostTableViewCell) {
         self.performSegue(withIdentifier: "ComentariosViewController", sender: cell.objPost)
     }

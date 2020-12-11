@@ -11,6 +11,7 @@ import Firebase
 
 protocol PostTableViewCellDelegate {
     func postTableViewCell(_ cell: PostTableViewCell)
+    func postTableVerPerfil(_ usuario: String)
 }
 
 class PostTableViewCell : UITableViewCell {
@@ -28,8 +29,19 @@ class PostTableViewCell : UITableViewCell {
     
     var delegate: PostTableViewCellDelegate?
     
+    
+    public var objPost: PostBE!{
+        didSet{
+            self.actualizar()
+        }
+    }
+    
     @IBAction func verComentarios(_ sender: Any) {
         self.delegate?.postTableViewCell(self)
+    }
+    
+    @IBAction func verPerfil(_ sender: Any) {
+        self.delegate?.postTableVerPerfil(self.objPost.usuario)
     }
     
     @IBAction func likePost(_ sender: Any) {
@@ -60,13 +72,6 @@ class PostTableViewCell : UITableViewCell {
         
         //Actualizar graficos
         actualizarLikes()
-    }
-    
-    
-    public var objPost: PostBE!{
-        didSet{
-            self.actualizar()
-        }
     }
     
     

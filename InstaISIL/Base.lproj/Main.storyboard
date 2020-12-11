@@ -363,7 +363,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2392.753623188406" y="-993.08035714285711"/>
+            <point key="canvasLocation" x="2397" y="-1062"/>
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="dTJ-Zz-xjJ">
@@ -406,6 +406,9 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Ver perfil"/>
+                                                    <connections>
+                                                        <action selector="verPerfil:" destination="B2N-bA-szE" eventType="touchUpInside" id="YD8-JJ-9Tc"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBI-3i-4iP">
                                                     <rect key="frame" x="18" y="98" width="392" height="98.333333333333314"/>
@@ -519,62 +522,260 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Iav-wD-eKr">
-                        <barButtonItem key="rightBarButtonItem" title="Mi perfil" id="imJ-kw-1Kc">
-                            <connections>
-                                <segue destination="qt1-S5-MIm" kind="show" id="gET-Dh-D6n"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Mi perfil" id="imJ-kw-1Kc"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnMiPerfil" destination="imJ-kw-1Kc" id="rvu-RR-zoM"/>
                         <outlet property="tabla" destination="Ffu-M7-fO4" id="8nA-bc-mSo"/>
                         <segue destination="F5L-Xl-SnC" kind="show" identifier="ComentariosViewController" id="VMx-gl-UZ6"/>
+                        <segue destination="qt1-S5-MIm" kind="show" identifier="PerfilViewController" id="sEz-CR-rrs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8av-rE-2uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2398.4615384615386" y="-342.65402843601896"/>
+            <point key="canvasLocation" x="2396" y="-382"/>
         </scene>
-        <!--View Controller-->
+        <!--Perfil View Controller-->
         <scene sceneID="mtt-g8-5Ot">
             <objects>
-                <viewController id="qt1-S5-MIm" sceneMemberID="viewController">
+                <viewController id="qt1-S5-MIm" customClass="PerfilViewController" customModule="InstaISIL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="87V-ho-HAV">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAGINA DEL PERFIL, EN CONSTRUCCION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snt-Lt-Wr9">
-                                <rect key="frame" x="60" y="148" width="308" height="71.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario123" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snt-Lt-Wr9">
+                                <rect key="frame" x="147.66666666666666" y="178.33333333333334" width="132.99999999999997" height="25.333333333333343"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Perfil-" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3Z-i5-KVs">
+                                <rect key="frame" x="186" y="117.99999999999999" width="56.333333333333343" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre: Nombre Apellido" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9B-JX-aF8">
+                                <rect key="frame" x="122.33333333333333" y="248.66666666666663" width="183.33333333333337" height="16"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrera: Carrera" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qui-Uc-QNK">
+                                <rect key="frame" x="158.66666666666666" y="289.66666666666669" width="110.66666666666666" height="16"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sede: San isidro" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAA-fR-1v0">
+                                <rect key="frame" x="161" y="330.66666666666669" width="106" height="16"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOL-D3-qn7">
-                                <rect key="frame" x="90" y="279.66666666666669" width="248" height="33"/>
-                                <color key="backgroundColor" red="0.79187817260000004" green="0.50112074790000005" blue="0.4264154557" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <rect key="frame" x="119" y="501.66666666666674" width="190" height="30"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="k1W-Mb-bo5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Realizar publicacion"/>
                                 <connections>
                                     <segue destination="Eb5-vx-bV1" kind="show" id="eyU-1h-8K5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8Z-Vw-14V">
+                                <rect key="frame" x="119" y="446.66666666666669" width="190" height="30"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="HF6-R2-lzj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Editar perfil">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GRf-jo-4fN" kind="show" id="NOm-Y7-gBL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imF-VU-T2T">
+                                <rect key="frame" x="119" y="391.66666666666669" width="190" height="30"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="Ucv-VP-ils"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Ver posts">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y6m-Nw-UEP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="y6m-Nw-UEP" firstAttribute="trailing" secondItem="Snt-Lt-Wr9" secondAttribute="trailing" constant="60" id="X2H-eL-avB"/>
-                            <constraint firstItem="Snt-Lt-Wr9" firstAttribute="top" secondItem="y6m-Nw-UEP" secondAttribute="top" constant="60" id="YiR-dH-vt0"/>
-                            <constraint firstItem="y6m-Nw-UEP" firstAttribute="trailing" secondItem="gOL-D3-qn7" secondAttribute="trailing" constant="90" id="epM-XA-TZI"/>
-                            <constraint firstItem="Snt-Lt-Wr9" firstAttribute="leading" secondItem="y6m-Nw-UEP" secondAttribute="leading" constant="60" id="kIW-cd-iFS"/>
-                            <constraint firstItem="gOL-D3-qn7" firstAttribute="top" secondItem="Snt-Lt-Wr9" secondAttribute="bottom" constant="60" id="s8l-rm-fhV"/>
-                            <constraint firstItem="gOL-D3-qn7" firstAttribute="leading" secondItem="y6m-Nw-UEP" secondAttribute="leading" constant="90" id="tub-En-wnZ"/>
+                            <constraint firstItem="Snt-Lt-Wr9" firstAttribute="centerX" secondItem="y6m-Nw-UEP" secondAttribute="centerX" id="3vW-eb-iOn"/>
+                            <constraint firstItem="imF-VU-T2T" firstAttribute="centerX" secondItem="y6m-Nw-UEP" secondAttribute="centerX" id="5Yf-ZF-Gne"/>
+                            <constraint firstItem="gOL-D3-qn7" firstAttribute="centerX" secondItem="y6m-Nw-UEP" secondAttribute="centerX" id="EaH-Lm-fiC"/>
+                            <constraint firstItem="imF-VU-T2T" firstAttribute="top" secondItem="MAA-fR-1v0" secondAttribute="bottom" constant="45" id="IjK-ju-oeY"/>
+                            <constraint firstItem="g8Z-Vw-14V" firstAttribute="centerX" secondItem="y6m-Nw-UEP" secondAttribute="centerX" id="Oit-pY-oNM"/>
+                            <constraint firstItem="q3Z-i5-KVs" firstAttribute="centerX" secondItem="y6m-Nw-UEP" secondAttribute="centerX" id="QYe-HV-Cyt"/>
+                            <constraint firstItem="O9B-JX-aF8" firstAttribute="centerX" secondItem="y6m-Nw-UEP" secondAttribute="centerX" id="QfC-LH-AYJ"/>
+                            <constraint firstItem="MAA-fR-1v0" firstAttribute="top" secondItem="Qui-Uc-QNK" secondAttribute="bottom" constant="25" id="SyT-CD-2TN"/>
+                            <constraint firstItem="g8Z-Vw-14V" firstAttribute="top" secondItem="imF-VU-T2T" secondAttribute="bottom" constant="25" id="UBE-GE-utD"/>
+                            <constraint firstItem="Qui-Uc-QNK" firstAttribute="centerX" secondItem="y6m-Nw-UEP" secondAttribute="centerX" id="aoG-EB-BEf"/>
+                            <constraint firstItem="MAA-fR-1v0" firstAttribute="centerX" secondItem="y6m-Nw-UEP" secondAttribute="centerX" id="boh-pE-roS"/>
+                            <constraint firstItem="Qui-Uc-QNK" firstAttribute="top" secondItem="O9B-JX-aF8" secondAttribute="bottom" constant="25" id="lN2-8s-1Xc"/>
+                            <constraint firstItem="O9B-JX-aF8" firstAttribute="top" secondItem="Snt-Lt-Wr9" secondAttribute="bottom" constant="45" id="lgB-z2-beB"/>
+                            <constraint firstItem="Snt-Lt-Wr9" firstAttribute="top" secondItem="q3Z-i5-KVs" secondAttribute="bottom" constant="40" id="txw-4Y-T9m"/>
+                            <constraint firstItem="q3Z-i5-KVs" firstAttribute="top" secondItem="y6m-Nw-UEP" secondAttribute="top" constant="30" id="xQE-BJ-FwM"/>
+                            <constraint firstItem="gOL-D3-qn7" firstAttribute="top" secondItem="g8Z-Vw-14V" secondAttribute="bottom" constant="25" id="xZV-oG-FfZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LUm-dj-mxr"/>
+                    <navigationItem key="navigationItem" id="LUm-dj-mxr">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="hxD-QZ-eG9">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Imx-yn-xHJ">
+                                <rect key="frame" x="328" y="7.6666666666666679" width="80" height="29.000000000000004"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="u4O-TE-dlZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="Seguir">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnEditarPerfil" destination="g8Z-Vw-14V" id="sxh-c3-Zbl"/>
+                        <outlet property="btnPublicar" destination="gOL-D3-qn7" id="70Y-6M-g8D"/>
+                        <outlet property="btnSeguir" destination="Imx-yn-xHJ" id="3Gq-fv-S7e"/>
+                        <outlet property="carrera" destination="Qui-Uc-QNK" id="C3Y-K2-awV"/>
+                        <outlet property="nombre" destination="O9B-JX-aF8" id="5Sv-Pq-kba"/>
+                        <outlet property="sede" destination="MAA-fR-1v0" id="PmX-ON-L4C"/>
+                        <outlet property="tituloPerfil" destination="q3Z-i5-KVs" id="MqN-MC-JWC"/>
+                        <outlet property="usuario" destination="Snt-Lt-Wr9" id="oIz-rE-O4m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDj-T7-SeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3280" y="-468"/>
+            <point key="canvasLocation" x="3279" y="-80"/>
+        </scene>
+        <!--Editar Perfil View Controller-->
+        <scene sceneID="fjL-9m-cKr">
+            <objects>
+                <viewController id="GRf-jo-4fN" customClass="EditarPerfilViewController" customModule="InstaISIL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bVa-Iv-bIR">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05R-eF-HSv">
+                                <rect key="frame" x="0.0" y="88" width="428" height="838"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFZ-SQ-NUi">
+                                        <rect key="frame" x="0.0" y="10" width="428" height="5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="FfB-1v-gvd"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editar perfil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uB-p3-Ymb">
+                                        <rect key="frame" x="30" y="35" width="368" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar nombres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLg-fZ-EOn">
+                                        <rect key="frame" x="30" y="76" width="368" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ktD-Zm-GQZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar apellidos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6M-sW-vul">
+                                        <rect key="frame" x="30" y="136" width="368" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="NbW-7v-Iuu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar carrera" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIb-5k-u1P">
+                                        <rect key="frame" x="30" y="196" width="368" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Xbl-WM-6al"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar sede" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dOd-X2-Hg4">
+                                        <rect key="frame" x="30" y="256" width="368" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bKi-Sk-6hP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDg-kT-yhD">
+                                        <rect key="frame" x="30" y="334" width="368" height="33"/>
+                                        <color key="backgroundColor" red="0.79187817260000004" green="0.50112074790000005" blue="0.4264154557" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Realizar publicacion"/>
+                                        <connections>
+                                            <action selector="clickGuardar:" destination="Eb5-vx-bV1" eventType="touchUpInside" id="yo1-3M-ySc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TDg-kT-yhD" firstAttribute="leading" secondItem="dOd-X2-Hg4" secondAttribute="leading" id="1V5-Rd-DM8"/>
+                                    <constraint firstItem="dOd-X2-Hg4" firstAttribute="leading" secondItem="pIb-5k-u1P" secondAttribute="leading" id="AUq-Fp-j0X"/>
+                                    <constraint firstItem="PFZ-SQ-NUi" firstAttribute="top" secondItem="05R-eF-HSv" secondAttribute="top" constant="10" id="CRS-M4-PzS"/>
+                                    <constraint firstItem="A6M-sW-vul" firstAttribute="trailing" secondItem="JLg-fZ-EOn" secondAttribute="trailing" id="Eqz-iu-2Z8"/>
+                                    <constraint firstItem="PFZ-SQ-NUi" firstAttribute="leading" secondItem="05R-eF-HSv" secondAttribute="leading" id="HIg-wh-Lbt"/>
+                                    <constraint firstItem="1uB-p3-Ymb" firstAttribute="leading" secondItem="05R-eF-HSv" secondAttribute="leading" constant="30" id="Kje-ce-d30"/>
+                                    <constraint firstItem="1uB-p3-Ymb" firstAttribute="top" secondItem="PFZ-SQ-NUi" secondAttribute="bottom" constant="20" id="MJJ-r2-R2p"/>
+                                    <constraint firstAttribute="trailing" secondItem="PFZ-SQ-NUi" secondAttribute="trailing" id="OAI-Fe-otv"/>
+                                    <constraint firstItem="JLg-fZ-EOn" firstAttribute="top" secondItem="1uB-p3-Ymb" secondAttribute="bottom" constant="20" id="Yu5-KZ-P5v"/>
+                                    <constraint firstAttribute="bottom" secondItem="TDg-kT-yhD" secondAttribute="bottom" constant="40" id="dbn-B4-L9N"/>
+                                    <constraint firstItem="TDg-kT-yhD" firstAttribute="top" secondItem="dOd-X2-Hg4" secondAttribute="bottom" constant="38" id="eoL-sW-plR"/>
+                                    <constraint firstAttribute="trailing" secondItem="1uB-p3-Ymb" secondAttribute="trailing" constant="30" id="gDW-Zm-iYZ"/>
+                                    <constraint firstItem="JLg-fZ-EOn" firstAttribute="trailing" secondItem="1uB-p3-Ymb" secondAttribute="trailing" id="hpp-B2-x56"/>
+                                    <constraint firstItem="dOd-X2-Hg4" firstAttribute="trailing" secondItem="pIb-5k-u1P" secondAttribute="trailing" id="iwZ-Ls-5XP"/>
+                                    <constraint firstItem="dOd-X2-Hg4" firstAttribute="top" secondItem="pIb-5k-u1P" secondAttribute="bottom" constant="20" id="lPR-be-bDE"/>
+                                    <constraint firstItem="JLg-fZ-EOn" firstAttribute="leading" secondItem="1uB-p3-Ymb" secondAttribute="leading" id="m3h-nw-m0t"/>
+                                    <constraint firstItem="A6M-sW-vul" firstAttribute="top" secondItem="JLg-fZ-EOn" secondAttribute="bottom" constant="20" id="pPh-hN-264"/>
+                                    <constraint firstItem="pIb-5k-u1P" firstAttribute="trailing" secondItem="A6M-sW-vul" secondAttribute="trailing" id="qoP-Eh-h3w"/>
+                                    <constraint firstItem="pIb-5k-u1P" firstAttribute="leading" secondItem="A6M-sW-vul" secondAttribute="leading" id="r9w-MK-PGX"/>
+                                    <constraint firstItem="pIb-5k-u1P" firstAttribute="top" secondItem="A6M-sW-vul" secondAttribute="bottom" constant="20" id="soe-O3-H2p"/>
+                                    <constraint firstItem="A6M-sW-vul" firstAttribute="leading" secondItem="JLg-fZ-EOn" secondAttribute="leading" id="vUR-aW-yrv"/>
+                                    <constraint firstAttribute="width" secondItem="PFZ-SQ-NUi" secondAttribute="width" id="vYC-Jx-bKV"/>
+                                    <constraint firstItem="TDg-kT-yhD" firstAttribute="trailing" secondItem="dOd-X2-Hg4" secondAttribute="trailing" id="vnr-Rs-9lW"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oal-uw-iyE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="05R-eF-HSv" firstAttribute="top" secondItem="Oal-uw-iyE" secondAttribute="top" id="E98-RM-Y0m"/>
+                            <constraint firstItem="05R-eF-HSv" firstAttribute="trailing" secondItem="Oal-uw-iyE" secondAttribute="trailing" id="WQI-vy-S7V"/>
+                            <constraint firstItem="05R-eF-HSv" firstAttribute="leading" secondItem="Oal-uw-iyE" secondAttribute="leading" id="nhO-PT-ZSA"/>
+                            <constraint firstAttribute="bottom" secondItem="05R-eF-HSv" secondAttribute="bottom" id="zl8-aC-8db"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6eo-kC-k4N"/>
+                    <connections>
+                        <segue destination="f5u-Ab-Ae0" kind="presentation" identifier="PickerViewController" modalPresentationStyle="overCurrentContext" id="V9A-sU-eq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r9f-7K-gZM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AZU-if-N6L"/>
+            </objects>
+            <point key="canvasLocation" x="4182" y="203"/>
         </scene>
         <!--Crear Post View Controller-->
         <scene sceneID="pKL-6v-50H">
@@ -650,7 +851,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4200" y="-468"/>
+            <point key="canvasLocation" x="4182" y="-521"/>
         </scene>
         <!--Registro View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -851,7 +1052,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1460.8695652173915" y="300.66964285714283"/>
+            <point key="canvasLocation" x="1469" y="292"/>
         </scene>
         <!--Picker View Controller-->
         <scene sceneID="AoQ-ca-n00">
@@ -905,7 +1106,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2399" y="1016"/>
+            <point key="canvasLocation" x="3279" y="876"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="8FA-rb-uqs">
@@ -964,7 +1165,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2399" y="301"/>
+            <point key="canvasLocation" x="2396" y="312"/>
         </scene>
         <!--Comentarios View Controller-->
         <scene sceneID="4kt-eQ-As3">
@@ -1089,7 +1290,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3278.9719626168221" y="205.39956803455726"/>
+            <point key="canvasLocation" x="3279" y="-848"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d1l-Ll-eEh">
@@ -1111,6 +1312,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="V9A-sU-eq1"/>
         <segue reference="ex8-gn-d1p"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1125,6 +1327,12 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
