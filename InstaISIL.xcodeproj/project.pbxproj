@@ -35,6 +35,7 @@
 		4ED556F62583E4EC0020219A /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED556F52583E4EC0020219A /* PerfilViewController.swift */; };
 		4ED556F92583E4FF0020219A /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED556F82583E4FF0020219A /* EditarPerfilViewController.swift */; };
 		4EF43CC2258698F800BAFAB6 /* UsuarioBE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF43CC1258698F800BAFAB6 /* UsuarioBE.swift */; };
+		4EF43CC52586B0BC00BAFAB6 /* ExtensionesNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF43CC42586B0BC00BAFAB6 /* ExtensionesNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		4ED556F52583E4EC0020219A /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		4ED556F82583E4FF0020219A /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
 		4EF43CC1258698F800BAFAB6 /* UsuarioBE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioBE.swift; sourceTree = "<group>"; };
+		4EF43CC42586B0BC00BAFAB6 /* ExtensionesNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionesNavigator.swift; sourceTree = "<group>"; };
 		7C9BE0707B0C0D820D1E0E19 /* Pods-InstaISIL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaISIL.debug.xcconfig"; path = "Target Support Files/Pods-InstaISIL/Pods-InstaISIL.debug.xcconfig"; sourceTree = "<group>"; };
 		7CFF8742B6B78E209AFA4E10 /* Pods_InstaISIL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaISIL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74135BCA4B02286E1AC1ED2 /* Pods-InstaISIL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaISIL.release.xcconfig"; path = "Target Support Files/Pods-InstaISIL/Pods-InstaISIL.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				4E1D4C7625705D3E00CBC613 /* ExtensionesImagen.swift */,
 				4E3B281D257033E0006F833D /* ExtensionesFecha.swift */,
 				4E53BC5F255EE8BA00D11D27 /* ExtensionesString.swift */,
+				4EF43CC42586B0BC00BAFAB6 /* ExtensionesNavigator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				483CC17C252EA17F001F24E0 /* RegistroViewController.swift in Sources */,
 				4853410D2522212A00E47927 /* AppDelegate.swift in Sources */,
 				4853410F2522212A00E47927 /* SceneDelegate.swift in Sources */,
+				4EF43CC52586B0BC00BAFAB6 /* ExtensionesNavigator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

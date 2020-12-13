@@ -399,7 +399,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1U-Fg-VrK">
                                                     <rect key="frame" x="310" y="18" width="100" height="29"/>
-                                                    <color key="backgroundColor" red="0.79187817258883242" green="0.50112074786341321" blue="0.42641545572477119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="jK4-pZ-nzn"/>
                                                     </constraints>
@@ -497,6 +497,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                             <outlet property="btnComentarios" destination="Ngt-h4-nk3" id="EGM-8k-Uja"/>
                                             <outlet property="btnLike" destination="hPq-sg-lz4" id="6K3-H6-hjx"/>
                                             <outlet property="btnVerLikes" destination="cWT-im-Gsc" id="qz1-8G-MkB"/>
+                                            <outlet property="btnVerPerfil" destination="g1U-Fg-VrK" id="Zhn-CP-KLd"/>
                                             <outlet property="descripcion" destination="RBI-3i-4iP" id="sJu-TH-OWt"/>
                                             <outlet property="fecha" destination="emk-8s-NQt" id="N3W-sv-ds1"/>
                                             <outlet property="fotoPerfil" destination="ZEI-Jr-7iy" id="5ph-wP-s6w"/>
@@ -522,10 +523,22 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Iav-wD-eKr">
-                        <barButtonItem key="rightBarButtonItem" title="Mi perfil" id="imJ-kw-1Kc"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="bWx-w9-GcA">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8OW-qG-xwA">
+                                <rect key="frame" x="313" y="7" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Mi perfil">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSuperior:" destination="0F9-xn-oDR" eventType="touchUpInside" id="RT5-Cl-eaP"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnMiPerfil" destination="imJ-kw-1Kc" id="rvu-RR-zoM"/>
+                        <outlet property="btnSuperior" destination="8OW-qG-xwA" id="6Me-zg-Kk4"/>
                         <outlet property="tabla" destination="Ffu-M7-fO4" id="8nA-bc-mSo"/>
                         <segue destination="F5L-Xl-SnC" kind="show" identifier="ComentariosViewController" id="VMx-gl-UZ6"/>
                         <segue destination="qt1-S5-MIm" kind="show" identifier="PerfilViewController" id="sEz-CR-rrs"/>
@@ -610,6 +623,9 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                 <state key="normal" title="Ver posts">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="verPosts:" destination="qt1-S5-MIm" eventType="touchUpInside" id="opF-up-zri"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y6m-Nw-UEP"/>
@@ -1337,7 +1353,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="V9A-sU-eq1"/>
-        <segue reference="ex8-gn-d1p"/>
+        <segue reference="sji-dw-C9h"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="comment" width="100" height="100"/>

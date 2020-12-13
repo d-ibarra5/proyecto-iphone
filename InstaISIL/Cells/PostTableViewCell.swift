@@ -12,6 +12,7 @@ import Firebase
 protocol PostTableViewCellDelegate {
     func postTableViewCell(_ cell: PostTableViewCell)
     func postTableVerPerfil(_ usuario: String)
+    func postTableEliminarPost ()
 }
 
 class PostTableViewCell : UITableViewCell {
@@ -26,6 +27,7 @@ class PostTableViewCell : UITableViewCell {
     @IBOutlet weak private var btnLike              : UIButton!
     @IBOutlet weak private var btnComentarios       : UIButton!
     @IBOutlet weak private var btnVerLikes          : UIButton!
+    @IBOutlet weak private var btnVerPerfil          : UIButton!
     
     var delegate: PostTableViewCellDelegate?
     
@@ -41,7 +43,29 @@ class PostTableViewCell : UITableViewCell {
     }
     
     @IBAction func verPerfil(_ sender: Any) {
-        self.delegate?.postTableVerPerfil(self.objPost.usuario)
+        
+        let user = UserDefaults.standard.string(forKey: "Usuario") as? String ?? ""
+        let filtro = UserDefaults.standard.string(forKey: "FiltroPosts") as? String ?? ""
+
+        //Eliminar post
+        if filtro != "" && user == filtro {
+                        
+            let db = Firestore.firestore()
+            db.collection("posts").document(objPost.id).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+            self.delegate?.postTableEliminarPost()
+        }
+        
+        //Ver perfil
+        else{
+            self.delegate?.postTableVerPerfil(self.objPost.usuario)
+        }
+        
     }
     
     @IBAction func likePost(_ sender: Any) {
@@ -103,6 +127,20 @@ class PostTableViewCell : UITableViewCell {
         //Si no, ocultar view de imagen
         else {
             imageHeight.constant = 0
+        }
+        
+        let user = UserDefaults.standard.string(forKey: "Usuario") as? String ?? ""
+        let filtro = UserDefaults.standard.string(forKey: "FiltroPosts") as? String ?? ""
+
+        //Si hay filtro y es tu usuario, cambiar por boton de eliminar
+        if filtro != "" && user == filtro {
+            btnVerPerfil.setTitle("Eliminar post", for: .normal)
+            btnVerPerfil.backgroundColor = UIColor.red
+        }
+        //Si no, cambiar a boton de ver perfil
+        else{
+            btnVerPerfil.setTitle("Ver perfil", for: .normal)
+            btnVerPerfil.backgroundColor = UIColor.systemIndigo
         }
         
         actualizarLikes()

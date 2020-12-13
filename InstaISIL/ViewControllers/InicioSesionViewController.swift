@@ -75,6 +75,8 @@ class InicioSesionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set("", forKey: "Usuario")
+        UserDefaults.standard.set("", forKey: "FiltroPosts")
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -73,6 +73,12 @@ class PerfilViewController: UIViewController {
         actualizarSeguir()
     }
     
+    
+    @IBAction func verPosts(_ sender: Any) {
+        UserDefaults.standard.set(nombreUsuario, forKey: "FiltroPosts")
+        self.navigationController?.backToViewController(viewController: TimelineViewController.self)
+    }
+    
     @IBAction func seguir(_ sender: Any) {
         
         let user = UserDefaults.standard.string(forKey: "Usuario") as? String ?? ""

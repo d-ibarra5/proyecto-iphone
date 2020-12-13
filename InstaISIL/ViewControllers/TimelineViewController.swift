@@ -12,14 +12,12 @@ import Firebase
 class TimelineViewController: UIViewController {
     
     @IBOutlet weak var tabla: UITableView!
-    @IBOutlet weak var btnMiPerfil: UIBarButtonItem!
+    @IBOutlet weak var btnSuperior: UIButton!
     
     var arrayPosts = [PostBE]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnMiPerfil.target = self
-        btnMiPerfil.action = #selector(btnAbrirPerfil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,6 +30,17 @@ class TimelineViewController: UIViewController {
         arrayPosts = [PostBE]()
         
         let db = Firestore.firestore()
+        
+        let filtro = UserDefaults.standard.string(forKey: "FiltroPosts") as? String ?? ""
+        
+        if filtro != "" {
+            btnSuperior.setTitle("Quitar filtro", for: .normal)
+            btnSuperior.backgroundColor = UIColor.systemRed
+        }
+        else{
+            btnSuperior.setTitle("Mi perfil", for: .normal)
+            btnSuperior.backgroundColor = UIColor.systemGreen
+        }
                 
         //Conseguir todos los posts
         db.collection("posts").getDocuments() { (querySnapshot, err) in
@@ -41,6 +50,12 @@ class TimelineViewController: UIViewController {
                 for document in querySnapshot!.documents {
                     let data = document.data()
                     let usu = data["usuario"] as? String ?? ""
+                    
+                    //Si hay filtro de usuario y el usuario no es el indicado, continuar
+                    if filtro != "" && filtro != usu {
+                        continue
+                    }
+                    
                     let img = data["imgURL"] as? String ?? ""
                     let dsc = data["descripcion"] as? String ?? ""
                     let ts = data["fecha"] as! Timestamp
@@ -87,9 +102,20 @@ class TimelineViewController: UIViewController {
         
     }
     
-    @IBAction func btnAbrirPerfil(_ sender: UIButton) {
-        let user = UserDefaults.standard.string(forKey: "Usuario") as? String ?? ""
-        self.performSegue(withIdentifier: "PerfilViewController", sender: user)
+    @IBAction func btnSuperior(_ sender: UIButton) {
+        let filtro = UserDefaults.standard.string(forKey: "FiltroPosts") as? String ?? ""
+        
+        //Si hay filtro, usar boton para quitarlo
+        if filtro != "" {
+            UserDefaults.standard.set("", forKey: "FiltroPosts") //Reiniciar filtro
+            cargarPosts()
+        }
+        //Si no, ir a mi perfil
+        else{
+            UserDefaults.standard.set("", forKey: "FiltroPosts") //Reiniciar filtro
+            let user = UserDefaults.standard.string(forKey: "Usuario") as? String ?? ""
+            self.performSegue(withIdentifier: "PerfilViewController", sender: user)
+        }
     }
     
     
@@ -105,11 +131,15 @@ class TimelineViewController: UIViewController {
 
 extension TimelineViewController: PostTableViewCellDelegate {
     func postTableVerPerfil(_ usuario: String) {
+        UserDefaults.standard.set("", forKey: "FiltroPosts") //Reiniciar filtro
         self.performSegue(withIdentifier: "PerfilViewController", sender: usuario)
     }
     
     func postTableViewCell(_ cell: PostTableViewCell) {
         self.performSegue(withIdentifier: "ComentariosViewController", sender: cell.objPost)
+    }
+    func postTableEliminarPost() {
+        self.cargarPosts()
     }
 }
 
