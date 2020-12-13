@@ -21,6 +21,8 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var carrera : UILabel!
     public var nombreUsuario : String!
     
+    public var objUsuario : UsuarioBE!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +44,13 @@ class PerfilViewController: UIViewController {
                 self.sede.text = sede
                 self.carrera.text = carrera
                 
+                self.objUsuario = UsuarioBE(
+                    usuario: self.nombreUsuario,
+                    nombres: nom,
+                    apellidos: ape,
+                    carrera: carrera,
+                    sede: sede)
+                
             } else {
                 print("Usuario no existe")
             }
@@ -61,7 +70,74 @@ class PerfilViewController: UIViewController {
             btnEditarPerfil.isHidden = true
             tituloPerfil.text = "-Perfil-"
         }
+        actualizarSeguir()
+    }
+    
+    @IBAction func seguir(_ sender: Any) {
         
+        let user = UserDefaults.standard.string(forKey: "Usuario") as? String ?? ""
+        
+        let db = Firestore.firestore()
+        let usuarioDoc = db.collection("usuarios").document(user)
+        
+        //Si ya lo siguio, dejar de seguir
+        if btnSeguir.tag == 1 {
+            //Guardar en firebase
+            usuarioDoc.updateData([
+                "seguidos": FieldValue.arrayRemove([nombreUsuario])
+            ])
+        }
+        
+        //Si no, seguir
+        else if btnSeguir.tag == 0{
+            //Guardar en firebase
+            usuarioDoc.updateData([
+                "seguidos": FieldValue.arrayUnion([nombreUsuario])
+            ])
+        }
+        
+        actualizarSeguir()
+    }
+    
+    func actualizarSeguir(){        
+        let user = UserDefaults.standard.string(forKey: "Usuario") as? String ?? ""
+        
+        let db = Firestore.firestore()
+        let docRef = db.collection("usuarios").document(user)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                var seg = [String]()
+                if let seguidos = data!["seguidos"] {
+                    seg = seguidos as? [String] ?? [String]()
+                }
+                
+                if seg.contains(self.nombreUsuario){
+                    self.btnSeguir.setTitle("No seguir", for: .normal)
+                    self.btnSeguir.backgroundColor = UIColor.systemRed
+                    self.btnSeguir.tag = 1
+                }
+                else{
+                    self.btnSeguir.setTitle("Seguir", for: .normal)
+                    self.btnSeguir.backgroundColor = UIColor.systemGreen
+                    self.btnSeguir.tag = 0
+                }
+                
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+    
+    @IBAction func btnEditarPerfil(_ sender: Any) {
+        self.performSegue(withIdentifier: "EditarPerfilViewController", sender: objUsuario)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? EditarPerfilViewController {
+            controller.objUsuario = sender as? UsuarioBE
+        }
     }
     
 

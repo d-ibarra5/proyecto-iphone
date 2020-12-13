@@ -69,14 +69,12 @@ class RegistroViewController: UIViewController {
     @IBOutlet weak var txtCarrera: UITextField!
     @IBOutlet weak var txtFecha: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
-    
-    
+       
     
     var fechaFormateada = ""
     var pickerActual: String = ""
     
-    let sedes = ["Jesus Maria", "Miraflores", "La Molina", "San Isidro"]
-    
+    let sedes = ["Jesus Maria", "Miraflores", "La Molina", "San Isidro"]    
     let carreras = ["Diseno Grafico","Periodismo","Marketing","Desarrollo de Software","Hoteleria"]
     
     func MensajeAlerta (titulo: String, mensaje: String) {

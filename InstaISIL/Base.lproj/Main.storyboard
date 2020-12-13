@@ -597,7 +597,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GRf-jo-4fN" kind="show" id="NOm-Y7-gBL"/>
+                                    <action selector="btnEditarPerfil:" destination="qt1-S5-MIm" eventType="touchUpInside" id="Idm-AL-iOb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imF-VU-T2T">
@@ -646,6 +646,9 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                 <state key="normal" title="Seguir">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="seguir:" destination="qt1-S5-MIm" eventType="touchUpInside" id="A60-N7-XXw"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -658,6 +661,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                         <outlet property="sede" destination="MAA-fR-1v0" id="PmX-ON-L4C"/>
                         <outlet property="tituloPerfil" destination="q3Z-i5-KVs" id="MqN-MC-JWC"/>
                         <outlet property="usuario" destination="Snt-Lt-Wr9" id="oIz-rE-O4m"/>
+                        <segue destination="GRf-jo-4fN" kind="show" identifier="EditarPerfilViewController" id="k9F-aE-79A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDj-T7-SeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -694,7 +698,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                             <constraint firstAttribute="height" constant="40" id="ktD-Zm-GQZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar apellidos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6M-sW-vul">
                                         <rect key="frame" x="30" y="136" width="368" height="40"/>
@@ -702,7 +706,7 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                             <constraint firstAttribute="height" constant="40" id="NbW-7v-Iuu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar carrera" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIb-5k-u1P">
                                         <rect key="frame" x="30" y="196" width="368" height="40"/>
@@ -710,7 +714,10 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                             <constraint firstAttribute="height" constant="40" id="Xbl-WM-6al"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="GRf-jo-4fN" id="fkV-Sc-dZI"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresar sede" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dOd-X2-Hg4">
                                         <rect key="frame" x="30" y="256" width="368" height="40"/>
@@ -718,19 +725,24 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                             <constraint firstAttribute="height" constant="40" id="bKi-Sk-6hP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="GRf-jo-4fN" id="B7h-aF-VrM"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDg-kT-yhD">
                                         <rect key="frame" x="30" y="334" width="368" height="33"/>
                                         <color key="backgroundColor" red="0.79187817260000004" green="0.50112074790000005" blue="0.4264154557" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Realizar publicacion"/>
+                                        <state key="normal" title="Guardar cambios"/>
                                         <connections>
+                                            <action selector="clickBtnRegistrar:" destination="GRf-jo-4fN" eventType="touchUpInside" id="L7o-Lf-dYI"/>
                                             <action selector="clickGuardar:" destination="Eb5-vx-bV1" eventType="touchUpInside" id="yo1-3M-ySc"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="TDg-kT-yhD" firstAttribute="leading" secondItem="dOd-X2-Hg4" secondAttribute="leading" id="1V5-Rd-DM8"/>
                                     <constraint firstItem="dOd-X2-Hg4" firstAttribute="leading" secondItem="pIb-5k-u1P" secondAttribute="leading" id="AUq-Fp-j0X"/>
@@ -756,6 +768,9 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                                     <constraint firstAttribute="width" secondItem="PFZ-SQ-NUi" secondAttribute="width" id="vYC-Jx-bKV"/>
                                     <constraint firstItem="TDg-kT-yhD" firstAttribute="trailing" secondItem="dOd-X2-Hg4" secondAttribute="trailing" id="vnr-Rs-9lW"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NHn-jV-euX" appends="YES" id="0WY-jm-h7L"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oal-uw-iyE"/>
@@ -769,11 +784,20 @@ RQhzY3JpYmEgc3UgbnVldmEgY29udHJhc2XDsWE
                     </view>
                     <navigationItem key="navigationItem" id="6eo-kC-k4N"/>
                     <connections>
+                        <outlet property="constraintBottomScroll" destination="dbn-B4-L9N" id="ixg-nz-uws"/>
+                        <outlet property="txtApellidos" destination="A6M-sW-vul" id="oim-tb-uwf"/>
+                        <outlet property="txtCarrera" destination="pIb-5k-u1P" id="72M-rN-jcc"/>
+                        <outlet property="txtNombres" destination="JLg-fZ-EOn" id="32Y-Jp-6J6"/>
+                        <outlet property="txtSede" destination="dOd-X2-Hg4" id="YuN-O4-ajD"/>
                         <segue destination="f5u-Ab-Ae0" kind="presentation" identifier="PickerViewController" modalPresentationStyle="overCurrentContext" id="V9A-sU-eq1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9f-7K-gZM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="AZU-if-N6L"/>
+                <tapGestureRecognizer id="NHn-jV-euX">
+                    <connections>
+                        <action selector="clickBtnCloseKeyboard:" destination="GRf-jo-4fN" id="wiz-Rz-IjB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4182" y="203"/>
         </scene>

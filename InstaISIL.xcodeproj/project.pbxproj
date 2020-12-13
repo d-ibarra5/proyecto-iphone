@@ -34,6 +34,7 @@
 		4E53BC63255EEDF700D11D27 /* CambiarPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E53BC62255EEDF700D11D27 /* CambiarPasswordViewController.swift */; };
 		4ED556F62583E4EC0020219A /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED556F52583E4EC0020219A /* PerfilViewController.swift */; };
 		4ED556F92583E4FF0020219A /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED556F82583E4FF0020219A /* EditarPerfilViewController.swift */; };
+		4EF43CC2258698F800BAFAB6 /* UsuarioBE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF43CC1258698F800BAFAB6 /* UsuarioBE.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		4E53BC62255EEDF700D11D27 /* CambiarPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambiarPasswordViewController.swift; sourceTree = "<group>"; };
 		4ED556F52583E4EC0020219A /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		4ED556F82583E4FF0020219A /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
+		4EF43CC1258698F800BAFAB6 /* UsuarioBE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioBE.swift; sourceTree = "<group>"; };
 		7C9BE0707B0C0D820D1E0E19 /* Pods-InstaISIL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaISIL.debug.xcconfig"; path = "Target Support Files/Pods-InstaISIL/Pods-InstaISIL.debug.xcconfig"; sourceTree = "<group>"; };
 		7CFF8742B6B78E209AFA4E10 /* Pods_InstaISIL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaISIL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74135BCA4B02286E1AC1ED2 /* Pods-InstaISIL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaISIL.release.xcconfig"; path = "Target Support Files/Pods-InstaISIL/Pods-InstaISIL.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				4E3B281725702B59006F833D /* PostBE.swift */,
+				4EF43CC1258698F800BAFAB6 /* UsuarioBE.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E1D4C7725705D3E00CBC613 /* ExtensionesImagen.swift in Sources */,
+				4EF43CC2258698F800BAFAB6 /* UsuarioBE.swift in Sources */,
 				4E1D4C8B25706D8900CBC613 /* AlertManager.swift in Sources */,
 				487E527D2530DDE000AF33AC /* InicioSesionViewController.swift in Sources */,
 				4ED556F92583E4FF0020219A /* EditarPerfilViewController.swift in Sources */,
